@@ -1,0 +1,114 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>atos.knowledgelab.capture</groupId>
+	<artifactId>pheme-stream-translator</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>pheme-stream-translator Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.7</jdk.version>		
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>atos.knowledgelab.capture</groupId>
+			<artifactId>capture-stream</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.6.3</version>
+		</dependency>
+
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+	</dependencies>
+	
+		<!-- Profile configuration -->
+	<profiles>
+	    <!-- The configuration of the development profile -->
+	    <profile>
+	        <id>gatezkt-journalism</id>
+	        <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+	        <properties>
+	            <build.profile.id>gatezkt-journalism</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/gatezkt-journalism</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	    <profile>
+	        <id>storm1-medical</id>
+	        <properties>
+	            <build.profile.id>storm1-medical</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/storm1-medical</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	    <profile>
+	        <id>ontotext</id>
+	        <properties>
+	            <build.profile.id>ontotext</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/ontotext</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	    
+	</profiles>
+	
+	
+	<build>
+		<finalName>pheme-stream-translator</finalName>
+		
+		<plugins>
+		
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		
+		</plugins>
+	</build>
+</project>

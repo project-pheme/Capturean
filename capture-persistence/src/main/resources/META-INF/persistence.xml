@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+
+	<persistence-unit name="Capture">
+		<provider>org.datanucleus.api.jpa.PersistenceProviderImpl</provider>
+		<class>atos.knowledgelab.capture.bean.DataChannel</class>
+		<class>atos.knowledgelab.capture.bean.DataSource</class>
+		<class>atos.knowledgelab.capture.bean.TwitterDataSource</class>
+		<class>atos.knowledgelab.capture.bean.DataPool</class>
+		<class>atos.knowledgelab.capture.bean.CaptureData</class>
+		<class>atos.knowledgelab.capture.bean.Tweet</class>
+		<class>atos.knowledgelab.capture.bean.TwitterUser</class>
+		<class>atos.knowledgelab.capture.bean.Geolocalization</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<property name="datanucleus.allowAttachOfTransient" value="true" />
+			<property name="datanucleus.ConnectionURL" value="hbase" />
+			<property name="datanucleus.schema.autoCreateAll" value="true" />
+			<property name="datanucleus.storeManagerType" value="hbase" />
+		</properties>
+
+	</persistence-unit>
+
+	<persistence-unit name="Capture-SQL" transaction-type="RESOURCE_LOCAL">
+		<provider>org.datanucleus.api.jpa.PersistenceProviderImpl</provider>
+		<mapping-file>META-INF/orm.xml</mapping-file>
+		<class>atos.knowledgelab.capture.bean.DataChannel</class>
+		<class>atos.knowledgelab.capture.bean.DataSource</class>
+		<class>atos.knowledgelab.capture.bean.TwitterDataSource</class>
+		<class>atos.knowledgelab.capture.bean.DataPool</class>
+		<class>atos.knowledgelab.capture.bean.CaptureData</class>
+		<class>atos.knowledgelab.capture.bean.Tweet</class>
+		<class>atos.knowledgelab.capture.bean.TwitterUser</class>
+		<class>atos.knowledgelab.capture.bean.Geolocalization</class>
+		<class>atos.knowledgelab.capture.bean.TermOccurrenceAnalysis</class>
+		<class>atos.knowledgelab.capture.bean.VolumeOcurrenceAnalysis</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		<properties>
+			<!-- <property name="javax.persistence.jdbc.url" value="jdbc:leanxcale:direct://83.149.103.129:1527/testDB;create=true" /> -->
+			<property name="javax.persistence.jdbc.url" value="jdbc:leanxcale://blade135:2181/testDB;create=true" />
+			<!--<property name="javax.persistence.jdbc.url" value="jdbc:leanxcale://192.168.56.101:2181/test_db;create=true" /> -->
+			
+			<property name="javax.persistence.jdbc.user" value="kuser" />
+			<property name="javax.persistence.jdbc.password" value="kuser" />
+			<property name="javax.persistence.jdbc.driver" value="com.leanxcale.jdbc.ElasticDriver" />
+			<property name="datanucleus.storeManagerType" value="rdbms" />
+			<property name="datanucleus.schema.autoCreateAll" value="true" />
+			<property name="datanucleus.allowAttachOfTransient" value="true" />
+		</properties>
+	<!-- <properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/test_db;create=true" />
+			<property name="javax.persistence.jdbc.user" value="user" />
+			<property name="javax.persistence.jdbc.password" value=" " />
+			<property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.ClientDriver" />
+			<property name="datanucleus.storeManagerType" value="rdbms" />
+			<property name="datanucleus.schema.autoCreateAll" value="true" />
+			<property name="datanucleus.allowAttachOfTransient" value="true" />
+		</properties> -->
+	</persistence-unit>
+
+</persistence>

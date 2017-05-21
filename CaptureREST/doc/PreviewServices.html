@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>PreviewServices.html</title>
+  <meta name="generator" content="Haroopad 0.13.1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>div.oembedall-githubrepos{border:1px solid #DDD;border-radius:4px;list-style-type:none;margin:0 0 10px;padding:8px 10px 0;font:13.34px/1.4 helvetica,arial,freesans,clean,sans-serif;width:452px;background-color:#fff}div.oembedall-githubrepos .oembedall-body{background:-moz-linear-gradient(center top,#FAFAFA,#EFEFEF);background:-webkit-gradient(linear,left top,left bottom,from(#FAFAFA),to(#EFEFEF));border-bottom-left-radius:4px;border-bottom-right-radius:4px;border-top:1px solid #EEE;margin-left:-10px;margin-top:8px;padding:5px 10px;width:100%}div.oembedall-githubrepos h3{font-size:14px;margin:0;padding-left:18px;white-space:nowrap}div.oembedall-githubrepos p.oembedall-description{color:#444;font-size:12px;margin:0 0 3px}div.oembedall-githubrepos p.oembedall-updated-at{color:#888;font-size:11px;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats{border:none;float:right;font-size:11px;font-weight:700;padding-left:15px;position:relative;z-index:5;margin:0}div.oembedall-githubrepos ul.oembedall-repo-stats li{border:none;color:#666;display:inline-block;list-style-type:none;margin:0!important}div.oembedall-githubrepos ul.oembedall-repo-stats li a{background-color:transparent;border:none;color:#666!important;background-position:5px -2px;background-repeat:no-repeat;border-left:1px solid #DDD;display:inline-block;height:21px;line-height:21px;padding:0 5px 0 23px}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a{border-left:medium none;margin-right:-3px}div.oembedall-githubrepos ul.oembedall-repo-stats li a:hover{background:5px -27px no-repeat #4183C4;color:#FFF!important;text-decoration:none}div.oembedall-githubrepos ul.oembedall-repo-stats li:first-child a:hover{border-bottom-left-radius:3px;border-top-left-radius:3px}ul.oembedall-repo-stats li:last-child a:hover{border-bottom-right-radius:3px;border-top-right-radius:3px}span.oembedall-closehide{background-color:#aaa;border-radius:2px;cursor:pointer;margin-right:3px}div.oembedall-container{margin-top:5px;text-align:left}.oembedall-ljuser{font-weight:700}.oembedall-ljuser img{vertical-align:bottom;border:0;padding-right:1px}.oembedall-stoqembed{border-bottom:1px dotted #999;float:left;overflow:hidden;width:730px;line-height:1;background:#FFF;color:#000;font-family:Arial,Liberation Sans,DejaVu Sans,sans-serif;font-size:80%;text-align:left;margin:0;padding:0}.oembedall-stoqembed a{color:#07C;text-decoration:none;margin:0;padding:0}.oembedall-stoqembed a:hover{text-decoration:underline}.oembedall-stoqembed a:visited{color:#4A6B82}.oembedall-stoqembed h3{font-family:Trebuchet MS,Liberation Sans,DejaVu Sans,sans-serif;font-size:130%;font-weight:700;margin:0;padding:0}.oembedall-stoqembed .oembedall-reputation-score{color:#444;font-size:120%;font-weight:700;margin-right:2px}.oembedall-stoqembed .oembedall-user-info{height:35px;width:185px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-gravatar32{float:left;height:32px;width:32px}.oembedall-stoqembed .oembedall-user-info .oembedall-user-details{float:left;margin-left:5px;overflow:hidden;white-space:nowrap;width:145px}.oembedall-stoqembed .oembedall-question-hyperlink{font-weight:700}.oembedall-stoqembed .oembedall-stats{background:#EEE;margin:0 0 0 7px;padding:4px 7px 6px;width:58px}.oembedall-stoqembed .oembedall-statscontainer{float:left;margin-right:8px;width:86px}.oembedall-stoqembed .oembedall-votes{color:#555;padding:0 0 7px;text-align:center}.oembedall-stoqembed .oembedall-vote-count-post{font-size:240%;color:#808185;display:block;font-weight:700}.oembedall-stoqembed .oembedall-views{color:#999;padding-top:4px;text-align:center}.oembedall-stoqembed .oembedall-status{margin-top:-3px;padding:4px 0;text-align:center;background:#75845C;color:#FFF}.oembedall-stoqembed .oembedall-status strong{color:#FFF;display:block;font-size:140%}.oembedall-stoqembed .oembedall-summary{float:left;width:635px}.oembedall-stoqembed .oembedall-excerpt{line-height:1.2;margin:0;padding:0 0 5px}.oembedall-stoqembed .oembedall-tags{float:left;line-height:18px}.oembedall-stoqembed .oembedall-tags a:hover{text-decoration:none}.oembedall-stoqembed .oembedall-post-tag{background-color:#E0EAF1;border-bottom:1px solid #3E6D8E;border-right:1px solid #7F9FB6;color:#3E6D8E;font-size:90%;line-height:2.4;margin:2px 2px 2px 0;padding:3px 4px;text-decoration:none;white-space:nowrap}.oembedall-stoqembed .oembedall-post-tag:hover{background-color:#3E6D8E;border-bottom:1px solid #37607D;border-right:1px solid #37607D;color:#E0EAF1}.oembedall-stoqembed .oembedall-fr{float:right}.oembedall-stoqembed .oembedall-statsarrow{background-image:url(http://cdn.sstatic.net/stackoverflow/img/sprites.png?v=3);background-repeat:no-repeat;overflow:hidden;background-position:0 -435px;float:right;height:13px;margin-top:12px;width:7px}.oembedall-facebook1{border:1px solid #1A3C6C;padding:0;font:13.34px/1.4 verdana;width:500px}.oembedall-facebook2{background-color:#627add}.oembedall-facebook2 a{color:#e8e8e8;text-decoration:none}.oembedall-facebookBody{background-color:#fff;vertical-align:top;padding:5px}.oembedall-facebookBody .contents{display:inline-block;width:100%}.oembedall-facebookBody div img{float:left;margin-right:5px}div.oembedall-lanyard{-webkit-box-shadow:none;-webkit-transition-delay:0s;-webkit-transition-duration:.4000000059604645s;-webkit-transition-property:width;-webkit-transition-timing-function:cubic-bezier(0.42,0,.58,1);background-attachment:scroll;background-clip:border-box;background-color:transparent;background-image:none;background-origin:padding-box;border-width:0;box-shadow:none;color:#112644;display:block;float:left;font-family:'Trebuchet MS',Trebuchet,sans-serif;font-size:16px;height:253px;line-height:19px;margin:0;max-width:none;min-height:0;outline:#112644 0;overflow-x:visible;overflow-y:visible;padding:0;position:relative;text-align:left;vertical-align:baseline;width:804px}div.oembedall-lanyard .tagline{font-size:1.5em}div.oembedall-lanyard .wrapper{overflow:hidden;clear:both}div.oembedall-lanyard .split{float:left;display:inline}div.oembedall-lanyard .prominent-place .flag:active,div.oembedall-lanyard .prominent-place .flag:focus,div.oembedall-lanyard .prominent-place .flag:hover,div.oembedall-lanyard .prominent-place .flag:link,div.oembedall-lanyard .prominent-place .flag:visited{float:left;display:block;width:48px;height:48px;position:relative;top:-5px;margin-right:10px}div.oembedall-lanyard .place-context{font-size:.889em}div.oembedall-lanyard .prominent-place .sub-place{display:block}div.oembedall-lanyard .prominent-place{font-size:1.125em;line-height:1.1em;font-weight:400}div.oembedall-lanyard .main-date{color:#8CB4E0;font-weight:700;line-height:1.1}div.oembedall-lanyard .first{width:48.57%;margin:0 0 0 2.857%}.mermaid .label{color:#333}.node circle,.node polygon,.node rect{fill:#cde498;stroke:#13540c;stroke-width:1px}.edgePath .path{stroke:green;stroke-width:1.5px}.cluster rect{fill:#cdffb2;rx:40;stroke:#6eaa49;stroke-width:1px}.cluster text{fill:#333}.actor{stroke:#13540c;fill:#cde498}text.actor{fill:#000;stroke:none}.actor-line{stroke:grey}.messageLine0{stroke-width:1.5;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#333}.messageLine1{stroke-width:1.5;stroke-dasharray:"2 2";stroke:#333}#arrowhead{fill:#333}#crosshead path{fill:#333!important;stroke:#333!important}.messageText{fill:#333;stroke:none}.labelBox{stroke:#326932;fill:#cde498}.labelText,.loopText{fill:#000;stroke:none}.loopLine{stroke-width:2;stroke-dasharray:"2 2";marker-end:"url(#arrowhead)";stroke:#326932}.note{stroke:#6eaa49;fill:#fff5ad}.noteText{fill:#000;stroke:none;font-family:'trebuchet ms',verdana,arial;font-size:14px}.section{stroke:none;opacity:.2}.section0,.section2{fill:#6eaa49}.section1,.section3{fill:#fff;opacity:.2}.sectionTitle0,.sectionTitle1,.sectionTitle2,.sectionTitle3{fill:#333}.sectionTitle{text-anchor:start;font-size:11px;text-height:14px}.grid .tick{stroke:lightgrey;opacity:.3;shape-rendering:crispEdges}.grid path{stroke-width:0}.today{fill:none;stroke:red;stroke-width:2px}.task{stroke-width:2}.taskText{text-anchor:middle;font-size:11px}.taskTextOutsideRight{fill:#000;text-anchor:start;font-size:11px}.taskTextOutsideLeft{fill:#000;text-anchor:end;font-size:11px}.taskText0,.taskText1,.taskText2,.taskText3{fill:#fff}.task0,.task1,.task2,.task3{fill:#487e3a;stroke:#13540c}.taskTextOutside0,.taskTextOutside1,.taskTextOutside2,.taskTextOutside3{fill:#000}.active0,.active1,.active2,.active3{fill:#cde498;stroke:#13540c}.activeText0,.activeText1,.activeText2,.activeText3{fill:#000!important}.done0,.done1,.done2,.done3{stroke:grey;fill:lightgrey;stroke-width:2}.doneText0,.doneText1,.doneText2,.doneText3{fill:#000!important}.crit0,.crit1,.crit2,.crit3{stroke:#f88;fill:red;stroke-width:2}.activeCrit0,.activeCrit1,.activeCrit2,.activeCrit3{stroke:#f88;fill:#cde498;stroke-width:2}.doneCrit0,.doneCrit1,.doneCrit2,.doneCrit3{stroke:#f88;fill:lightgrey;stroke-width:2;cursor:pointer;shape-rendering:crispEdges}.activeCritText0,.activeCritText1,.activeCritText2,.activeCritText3,.doneCritText0,.doneCritText1,.doneCritText2,.doneCritText3{fill:#000!important}.titleText{text-anchor:middle;font-size:18px;fill:#000}text{font-family:'trebuchet ms',verdana,arial;font-size:14px}html{height:100%}body{margin:0!important;padding:5px 20px 26px!important;background-color:#fff;font-family:"Lucida Grande","Segoe UI","Apple SD Gothic Neo","Malgun Gothic","Lucida Sans Unicode",Helvetica,Arial,sans-serif;font-size:.9em;overflow-x:hidden;overflow-y:auto}br,h1,h2,h3,h4,h5,h6{clear:both}hr.page{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x;border:0;height:3px;padding:0}hr.underscore{border-top-style:dashed!important}body >:first-child{margin-top:0!important}img.plugin{box-shadow:0 1px 3px rgba(0,0,0,.1);border-radius:3px}iframe{border:0}figure{-webkit-margin-before:0;-webkit-margin-after:0;-webkit-margin-start:0;-webkit-margin-end:0}kbd{border:1px solid #aaa;-moz-border-radius:2px;-webkit-border-radius:2px;border-radius:2px;-moz-box-shadow:1px 2px 2px #ddd;-webkit-box-shadow:1px 2px 2px #ddd;box-shadow:1px 2px 2px #ddd;background-color:#f9f9f9;background-image:-moz-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-o-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:-webkit-linear-gradient(top,#eee,#f9f9f9,#eee);background-image:linear-gradient(top,#eee,#f9f9f9,#eee);padding:1px 3px;font-family:inherit;font-size:.85em}.oembeded .oembed_photo{display:inline-block}img[data-echo]{margin:25px 0;width:100px;height:100px;background:url(../img/ajax.gif) center center no-repeat #fff}.spinner{display:inline-block;width:10px;height:10px;margin-bottom:-.1em;border:2px solid rgba(0,0,0,.5);border-top-color:transparent;border-radius:100%;-webkit-animation:spin 1s infinite linear;animation:spin 1s infinite linear}.spinner:after{content:'';display:block;width:0;height:0;position:absolute;top:-6px;left:0;border:4px solid transparent;border-bottom-color:rgba(0,0,0,.5);-webkit-transform:rotate(45deg);transform:rotate(45deg)}@-webkit-keyframes spin{to{-webkit-transform:rotate(360deg)}}@keyframes spin{to{transform:rotate(360deg)}}p.toc{margin:0!important}p.toc ul{padding-left:10px}p.toc>ul{padding:10px;margin:0 10px;display:inline-block;border:1px solid #ededed;border-radius:5px}p.toc li,p.toc ul{list-style-type:none}p.toc li{width:100%;padding:0;overflow:hidden}p.toc li a::after{content:"."}p.toc li a:before{content:"• "}p.toc h5{text-transform:uppercase}p.toc .title{float:left;padding-right:3px}p.toc .number{margin:0;float:right;padding-left:3px;background:#fff;display:none}input.task-list-item{margin-left:-1.62em}.markdown{font-family:"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;padding:20px}.markdown a{text-decoration:none;vertical-align:baseline}.markdown a:hover{text-decoration:underline}.markdown h1{font-size:2.2em;font-weight:700;margin:1.5em 0 1em}.markdown h2{font-size:1.8em;font-weight:700;margin:1.275em 0 .85em}.markdown h3{font-size:1.6em;font-weight:700;margin:1.125em 0 .75em}.markdown h4{font-size:1.4em;font-weight:700;margin:.99em 0 .66em}.markdown h5{font-size:1.2em;font-weight:700;margin:.855em 0 .57em}.markdown h6{font-size:1em;font-weight:700;margin:.75em 0 .5em}.markdown h1+p,.markdown h1:first-child,.markdown h2+p,.markdown h2:first-child,.markdown h3+p,.markdown h3:first-child,.markdown h4+p,.markdown h4:first-child,.markdown h5+p,.markdown h5:first-child,.markdown h6+p,.markdown h6:first-child{margin-top:0}.markdown hr{border:1px solid #ccc}.markdown p{margin:1em 0;word-wrap:break-word}.markdown ol{list-style-type:decimal}.markdown li{display:list-item;line-height:1.4em}.markdown blockquote{margin:1em 20px}.markdown blockquote>:first-child{margin-top:0}.markdown blockquote>:last-child{margin-bottom:0}.markdown blockquote cite:before{content:'\2014 \00A0'}.markdown .code{border-radius:3px;word-wrap:break-word}.markdown pre{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;overflow:auto;padding:.5em}.markdown pre code{border:0;display:block}.markdown pre>code{font-family:Consolas,Inconsolata,Courier,monospace;font-weight:700;white-space:pre;margin:0}.markdown code{border-radius:3px;word-wrap:break-word;border:1px solid #ccc;padding:0 5px;margin:0 2px}.markdown img{max-width:100%}.markdown mark{color:#000;background-color:#fcf8e3}.markdown table{padding:0;border-collapse:collapse;border-spacing:0;margin-bottom:16px}.markdown table tr td,.markdown table tr th{border:1px solid #ccc;margin:0;padding:6px 13px}.markdown table tr th{font-weight:700}.markdown table tr th>:first-child{margin-top:0}.markdown table tr th>:last-child{margin-bottom:0}.markdown table tr td>:first-child{margin-top:0}.markdown table tr td>:last-child{margin-bottom:0}@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700);.haroopad{padding:20px;color:#222;font-size:15px;font-family:"Roboto Condensed",Tauri,"Hiragino Sans GB","Microsoft YaHei",STHeiti,SimSun,"Lucida Grande","Lucida Sans Unicode","Lucida Sans",'Segoe UI',AppleSDGothicNeo-Medium,'Malgun Gothic',Verdana,Tahoma,sans-serif;background:#fff;line-height:1.6;-webkit-font-smoothing:antialiased}.haroopad a{color:#3269a0}.haroopad a:hover{color:#4183c4}.haroopad h2{border-bottom:1px solid #e6e6e6}.haroopad h6{color:#777}.haroopad hr{border:1px solid #e6e6e6}.haroopad blockquote>code,.haroopad h1>code,.haroopad h2>code,.haroopad h3>code,.haroopad h4>code,.haroopad h5>code,.haroopad h6>code,.haroopad li>code,.haroopad p>code,.haroopad td>code{font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;font-size:85%;background-color:rgba(0,0,0,.02);padding:.2em .5em;border:1px solid #efefef}.haroopad pre>code{font-size:1em;letter-spacing:-1px;font-weight:700}.haroopad blockquote{border-left:4px solid #e6e6e6;padding:0 15px;color:#777}.haroopad table{background-color:#fafafa}.haroopad table tr td,.haroopad table tr th{border:1px solid #e6e6e6}.haroopad table tr:nth-child(2n){background-color:#f2f2f2}.hljs{display:block;overflow-x:auto;padding:.5em;background:#fdf6e3;color:#657b83;-webkit-text-size-adjust:none}.diff .hljs-header,.hljs-comment,.hljs-doctype,.hljs-javadoc,.hljs-pi,.lisp .hljs-string{color:#93a1a1}.css .hljs-tag,.hljs-addition,.hljs-keyword,.hljs-request,.hljs-status,.hljs-winutils,.method,.nginx .hljs-title{color:#859900}.hljs-command,.hljs-dartdoc,.hljs-hexcolor,.hljs-link_url,.hljs-number,.hljs-phpdoc,.hljs-regexp,.hljs-rules .hljs-value,.hljs-string,.hljs-tag .hljs-value,.tex .hljs-formula{color:#2aa198}.css .hljs-function,.hljs-built_in,.hljs-chunk,.hljs-decorator,.hljs-id,.hljs-identifier,.hljs-localvars,.hljs-title,.vhdl .hljs-literal{color:#268bd2}.hljs-attribute,.hljs-class .hljs-title,.hljs-constant,.hljs-link_reference,.hljs-parent,.hljs-type,.hljs-variable,.lisp .hljs-body,.smalltalk .hljs-number{color:#b58900}.css .hljs-pseudo,.diff .hljs-change,.hljs-attr_selector,.hljs-cdata,.hljs-header,.hljs-pragma,.hljs-preprocessor,.hljs-preprocessor .hljs-keyword,.hljs-shebang,.hljs-special,.hljs-subst,.hljs-symbol,.hljs-symbol .hljs-string{color:#cb4b16}.hljs-deletion,.hljs-important{color:#dc322f}.hljs-link_label{color:#6c71c4}.tex .hljs-formula{background:#eee8d5}.MathJax_Hover_Frame{border-radius:.25em;-webkit-border-radius:.25em;-moz-border-radius:.25em;-khtml-border-radius:.25em;box-shadow:0 0 15px #83A;-webkit-box-shadow:0 0 15px #83A;-moz-box-shadow:0 0 15px #83A;-khtml-box-shadow:0 0 15px #83A;border:1px solid #A6D!important;display:inline-block;position:absolute}.MathJax_Hover_Arrow{position:absolute;width:15px;height:11px;cursor:pointer}#MathJax_About{position:fixed;left:50%;width:auto;text-align:center;border:3px outset;padding:1em 2em;background-color:#DDD;color:#000;cursor:default;font-family:message-box;font-size:120%;font-style:normal;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:15px;-webkit-border-radius:15px;-moz-border-radius:15px;-khtml-border-radius:15px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_Menu{position:absolute;background-color:#fff;color:#000;width:auto;padding:5px 0;border:1px solid #CCC;margin:0;cursor:default;font:menu;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;z-index:201;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;-khtml-border-radius:5px;box-shadow:0 10px 20px gray;-webkit-box-shadow:0 10px 20px gray;-moz-box-shadow:0 10px 20px gray;-khtml-box-shadow:0 10px 20px gray;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}.MathJax_MenuItem{padding:1px 2em;background:0 0}.MathJax_MenuArrow{position:absolute;right:.5em;color:#666}.MathJax_MenuActive .MathJax_MenuArrow{color:#fff}.MathJax_MenuArrow.RTL{left:.5em;right:auto}.MathJax_MenuCheck{position:absolute;left:.7em}.MathJax_MenuCheck.RTL{right:.7em;left:auto}.MathJax_MenuRadioCheck{position:absolute;left:.7em}.MathJax_MenuRadioCheck.RTL{right:.7em;left:auto}.MathJax_MenuLabel{padding:1px 2em 3px 1.33em;font-style:italic}.MathJax_MenuRule{border-top:1px solid #DDD;margin:4px 3px}.MathJax_MenuDisabled{color:GrayText}.MathJax_MenuActive{background-color:#606872;color:#fff}.MathJax_Menu_Close{position:absolute;width:31px;height:31px;top:-15px;left:-15px}#MathJax_Zoom{position:absolute;background-color:#F0F0F0;overflow:auto;display:block;z-index:301;padding:.5em;border:1px solid #000;margin:0;font-weight:400;font-style:normal;text-align:left;text-indent:0;text-transform:none;line-height:normal;letter-spacing:normal;word-spacing:normal;word-wrap:normal;white-space:nowrap;float:none;box-shadow:5px 5px 15px #AAA;-webkit-box-shadow:5px 5px 15px #AAA;-moz-box-shadow:5px 5px 15px #AAA;-khtml-box-shadow:5px 5px 15px #AAA;filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}#MathJax_ZoomOverlay{position:absolute;left:0;top:0;z-index:300;display:inline-block;width:100%;height:100%;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}#MathJax_ZoomFrame{position:relative;display:inline-block;height:0;width:0}#MathJax_ZoomEventTrap{position:absolute;left:0;top:0;z-index:302;display:inline-block;border:0;padding:0;margin:0;background-color:#fff;opacity:0;filter:alpha(opacity=0)}.MathJax_Preview{color:#888}#MathJax_Message{position:fixed;left:1px;bottom:2px;background-color:#E6E6E6;border:1px solid #959595;margin:0;padding:2px 8px;z-index:102;color:#000;font-size:80%;width:auto;white-space:nowrap}#MathJax_MSIE_Frame{position:absolute;top:0;left:0;width:0;z-index:101;border:0;margin:0;padding:0}.MathJax_Error{color:#C00;font-style:italic}footer{position:fixed;font-size:.8em;text-align:right;bottom:0;margin-left:-25px;height:20px;width:100%}</style>
+</head>
+<body class="markdown haroopad">
+<h1 id="capture-rest-services"><a name="capture-rest-services" href="#capture-rest-services"></a>Capture REST services</h1><h2 id="query-preview-service"><a name="query-preview-service" href="#query-preview-service"></a>Query preview service</h2><p>Resources:</p><ul>
+<li><a href="#/search/tweets">/search/tweets</a><ul>
+<li><a href="#get-/search/tweets">GET /search/tweets</a></li></ul>
+</li></ul><h3 id="get-/search/tweets"><a name="get-/search/tweets" href="#get-/search/tweets"></a>GET /search/tweets</h3><p>This method provide a quick query preview service, to check query keywords before running an actual datachannel. It is used to fine tune twitter queries to avoid noisy keywords or find more precise queries.</p><p>Endpoint:</p><pre><code data-origin="<pre><code>http://gatezkt1:8080/CaptureREST/rest/search/tweets
+</code></pre>">http://gatezkt1:8080/CaptureREST/rest/search/tweets
+</code></pre><p>Methods:</p><ul>
+<li>GET</li></ul><p>Media types formats:</p><ul>
+<li>application/json</li><li>application/xml</li></ul><p>Parameters:</p><table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>keywords</td>
+<td>string</td>
+<td>Keywords Twitter search keywords, as accepted by Twitter API. See <a href="https://dev.twitter.com/rest/reference/get/search/tweets">https://dev.twitter.com/rest/reference/get/search/tweets</a> for query grammar. Keywords should be URL encoded.</td>
+</tr>
+<tr>
+<td>mode</td>
+<td>string</td>
+<td>One of the following modes: live, most_popular, mixed. Default is “live” (latest).</td>
+</tr>
+<tr>
+<td>max_results</td>
+<td>number</td>
+<td>Specify max number of results. Default: 500</td>
+</tr>
+</tbody>
+</table><p>Example invocation:</p><pre><code data-origin="<pre><code>curl -X GET -H &quot;Accept: application/json&quot; 'http://gatezkt1:8080/CaptureREST/rest/search/tweets?mode=live&amp;amp;keywords=iran%20cash'
+</code></pre>">curl -X GET -H "Accept: application/json" 'http://gatezkt1:8080/CaptureREST/rest/search/tweets?mode=live&amp;keywords=iran%20cash'
+</code></pre><p>Example reply (JSON):</p><pre><code data-origin="<pre><code>&amp;gt; GET /CaptureREST/rest/search/tweets?mode=live&amp;amp;keywords=iran%20cash&amp;amp;max_results=100 HTTP/1.1
+&amp;gt; User-Agent: curl/7.35.0
+&amp;gt; Host: gatezkt1:8080
+&amp;gt; Accept: application/json
+&amp;gt; 
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; Content-Type: application/json
+&amp;lt; Transfer-Encoding: chunked
+&amp;lt; Server: Jetty(9.2.2.v20140723)
+</code></pre>">&gt; GET /CaptureREST/rest/search/tweets?mode=live&amp;keywords=iran%20cash&amp;max_results=100 HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: gatezkt1:8080
+&gt; Accept: application/json
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: application/json
+&lt; Transfer-Encoding: chunked
+&lt; Server: Jetty(9.2.2.v20140723)
+</code></pre><pre class="json hljs"><code class="json" data-origin="<pre><code class=&quot;json&quot;>[
+  {
+    &quot;sentimentRaw&quot;: null,
+    &quot;annotationPolitical&quot;: [],
+    &quot;annotationGeo&quot;: [],
+    &quot;dangerousness&quot;: null,
+    &quot;stress&quot;: null,
+    &quot;sentiment&quot;: null,
+    &quot;rawJson&quot;: &quot;{\&quot;metadata\&quot;:{\&quot;result_type\&quot;:\&quot;recent\&quot;,\&quot;iso_language_code\&quot;:\&quot;en\&quot;},\&quot;quoted_status\&quot;:{\&quot;metadata\&quot;:{\&quot;result_type\&quot;:\&quot;recent\&quot;,\&quot;iso_language_code\&quot;:\&quot;en\&quot;},\&quot;in_reply_to_status_id_str\&quot;:null,\&quot;in_reply_to_status_id\&quot;:null,\&quot;created_at\&quot;:\&quot;Wed Oct 19 13:53:38 +0000 2016\&quot;,\&quot;in_reply_to_user_id_str\&quot;:null,\&quot;source\&quot;:\&quot;&amp;lt;a href=\\\&quot;http://twitter.com/download/iphone\\\&quot; rel=\\\&quot;nofollow\\\&quot;&amp;gt;Twitter for iPhone&amp;lt;\\/a&amp;gt;\&quot;,\&quot;retweet_count\&quot;:10,\&quot;retweeted\&quot;:false,\&quot;geo\&quot;:null,\&quot;in_reply_to_screen_name\&quot;:null,\&quot;is_quote_status\&quot;:false,\&quot;id_str\&quot;:\&quot;788739888006909953\&quot;,\&quot;in_reply_to_user_id\&quot;:null,\&quot;favorite_count\&quot;:4,\&quot;id\&quot;:788739888006909953,\&quot;text\&quot;:\&quot;American father and son sentenced to 10 years in Iranian prison https://t.co/aPrmwmGnY8\&quot;,\&quot;place\&quot;:null,\&quot;lang\&quot;:\&quot;en\&quot;,\&quot;favorited\&quot;:false,\&quot;possibly_sensitive\&quot;:false,\&quot;coordinates\&quot;:null,\&quot;truncated\&quot;:false,\&quot;entities\&quot;:{\&quot;urls\&quot;:[{\&quot;display_url\&quot;:\&quot;cnn.com/2016/10/18/wor\\u2026\&quot;,\&quot;indices\&quot;:[64,87],\&quot;expanded_url\&quot;:\&quot;http://www.cnn.com/2016/10/18/world/iranian-americans-sentenced-10-years/index.html\&quot;,\&quot;url\&quot;:\&quot;https://t.co/aPrmwmGnY8\&quot;}],\&quot;hashtags\&quot;:[],\&quot;user_mentions\&quot;:[],\&quot;symbols\&quot;:[]},\&quot;contributors\&quot;:null,\&quot;user\&quot;:{\&quot;utc_offset\&quot;:-14400,\&quot;friends_count\&quot;:5037,\&quot;profile_image_url_https\&quot;:\&quot;https://pbs.twimg.com/profile_images/416044148425502720/FRKCS5pH_normal.jpeg\&quot;,\&quot;listed_count\&quot;:13369,\&quot;profile_background_image_url\&quot;:\&quot;http://pbs.twimg.com/profile_background_images/743633139/bae4b64f714195d0c2d2dff162ac596e.jpeg\&quot;,\&quot;default_profile_image\&quot;:false,\&quot;favourites_count\&quot;:6122,\&quot;description\&quot;:\&quot;CNN Anchor and Chief Washington Correspondent. Dissecting my tweets with Talmudic meticulousness will result in wrong conclusions. RTs do not = endorsement.\&quot;,\&quot;created_at\&quot;:\&quot;Fri Apr 25 17:23:28 +0000 2008\&quot;,\&quot;is_translator\&quot;:false,\&quot;profile_background_image_url_https\&quot;:\&quot;https://pbs.twimg.com/profile_background_images/743633139/bae4b64f714195d0c2d2dff162ac596e.jpeg\&quot;,\&quot;protected\&quot;:false,\&quot;screen_name\&quot;:\&quot;jaketapper\&quot;,\&quot;id_str\&quot;:\&quot;14529929\&quot;,\&quot;profile_link_color\&quot;:\&quot;088253\&quot;,\&quot;is_translation_enabled\&quot;:false,\&quot;translator_type\&quot;:\&quot;none\&quot;,\&quot;id\&quot;:14529929,\&quot;geo_enabled\&quot;:true,\&quot;profile_background_color\&quot;:\&quot;EDECE9\&quot;,\&quot;lang\&quot;:\&quot;en\&quot;,\&quot;has_extended_profile\&quot;:false,\&quot;profile_sidebar_border_color\&quot;:\&quot;FFFFFF\&quot;,\&quot;profile_text_color\&quot;:\&quot;634047\&quot;,\&quot;verified\&quot;:true,\&quot;profile_image_url\&quot;:\&quot;http://pbs.twimg.com/profile_images/416044148425502720/FRKCS5pH_normal.jpeg\&quot;,\&quot;time_zone\&quot;:\&quot;Eastern Time (US &amp;amp; Canada)\&quot;,\&quot;url\&quot;:\&quot;http://t.co/wwbPcS72qd\&quot;,\&quot;contributors_enabled\&quot;:false,\&quot;profile_background_tile\&quot;:false,\&quot;profile_banner_url\&quot;:\&quot;https://pbs.twimg.com/profile_banners/14529929/1353593155\&quot;,\&quot;entities\&quot;:{\&quot;description\&quot;:{\&quot;urls\&quot;:[]},\&quot;url\&quot;:{\&quot;urls\&quot;:[{\&quot;display_url\&quot;:\&quot;facebook.com/OutpostBook\&quot;,\&quot;indices\&quot;:[0,22],\&quot;expanded_url\&quot;:\&quot;http://www.facebook.com/OutpostBook\&quot;,\&quot;url\&quot;:\&quot;http://t.co/wwbPcS72qd\&quot;}]}},\&quot;statuses_count\&quot;:128746,\&quot;follow_request_sent\&quot;:null,\&quot;followers_count\&quot;:584330,\&quot;profile_use_background_image\&quot;:true,\&quot;default_profile\&quot;:false,\&quot;following\&quot;:null,\&quot;name\&quot;:\&quot;Jake Tapper\&quot;,\&quot;location\&quot;:\&quot;\&quot;,\&quot;profile_sidebar_fill_color\&quot;:\&quot;E3E2DE\&quot;,\&quot;notifications\&quot;:null}},\&quot;in_reply_to_status_id_str\&quot;:null,\&quot;in_reply_to_status_id\&quot;:null,\&quot;created_at\&quot;:\&quot;Wed Oct 19 14:12:02 +0000 2016\&quot;,\&quot;in_reply_to_user_id_str\&quot;:null,\&quot;source\&quot;:\&quot;&amp;lt;a href=\\\&quot;http://twitter.com/download/android\\\&quot; rel=\\\&quot;nofollow\\\&quot;&amp;gt;Twitter for Android&amp;lt;\\/a&amp;gt;\&quot;,\&quot;quoted_status_id\&quot;:788739888006909953,\&quot;retweet_count\&quot;:0,\&quot;retweeted\&quot;:false,\&quot;geo\&quot;:null,\&quot;in_reply_to_screen_name\&quot;:null,\&quot;is_quote_status\&quot;:true,\&quot;id_str\&quot;:\&quot;788744519965630465\&quot;,\&quot;in_reply_to_user_id\&quot;:null,\&quot;favorite_count\&quot;:0,\&quot;id\&quot;:788744519965630465,\&quot;text\&quot;:\&quot;This is horrible. Further proof that Iran is a barbaric regime that Obozo gave 1.2 billion in cash to. https://t.co/t0WCcchSuc\&quot;,\&quot;place\&quot;:null,\&quot;lang\&quot;:\&quot;en\&quot;,\&quot;favorited\&quot;:false,\&quot;possibly_sensitive\&quot;:false,\&quot;coordinates\&quot;:null,\&quot;truncated\&quot;:false,\&quot;entities\&quot;:{\&quot;urls\&quot;:[{\&quot;display_url\&quot;:\&quot;twitter.com/jaketapper/sta\\u2026\&quot;,\&quot;indices\&quot;:[103,126],\&quot;expanded_url\&quot;:\&quot;https://twitter.com/jaketapper/status/788739888006909953\&quot;,\&quot;url\&quot;:\&quot;https://t.co/t0WCcchSuc\&quot;}],\&quot;hashtags\&quot;:[],\&quot;user_mentions\&quot;:[],\&quot;symbols\&quot;:[]},\&quot;quoted_status_id_str\&quot;:\&quot;788739888006909953\&quot;,\&quot;contributors\&quot;:null,\&quot;user\&quot;:{\&quot;utc_offset\&quot;:null,\&quot;friends_count\&quot;:108,\&quot;profile_image_url_https\&quot;:\&quot;https://pbs.twimg.com/profile_images/447064846467473408/xtlL0jlp_normal.jpeg\&quot;,\&quot;listed_count\&quot;:1,\&quot;profile_background_image_url\&quot;:\&quot;http://abs.twimg.com/images/themes/theme1/bg.png\&quot;,\&quot;default_profile_image\&quot;:false,\&quot;favourites_count\&quot;:339,\&quot;description\&quot;:\&quot;\&quot;,\&quot;created_at\&quot;:\&quot;Thu May 21 05:19:58 +0000 2009\&quot;,\&quot;is_translator\&quot;:false,\&quot;profile_background_image_url_https\&quot;:\&quot;https://abs.twimg.com/images/themes/theme1/bg.png\&quot;,\&quot;protected\&quot;:false,\&quot;screen_name\&quot;:\&quot;EmmBliss\&quot;,\&quot;id_str\&quot;:\&quot;41534914\&quot;,\&quot;profile_link_color\&quot;:\&quot;0084B4\&quot;,\&quot;is_translation_enabled\&quot;:false,\&quot;translator_type\&quot;:\&quot;none\&quot;,\&quot;id\&quot;:41534914,\&quot;geo_enabled\&quot;:false,\&quot;profile_background_color\&quot;:\&quot;C0DEED\&quot;,\&quot;lang\&quot;:\&quot;en\&quot;,\&quot;has_extended_profile\&quot;:true,\&quot;profile_sidebar_border_color\&quot;:\&quot;C0DEED\&quot;,\&quot;profile_text_color\&quot;:\&quot;333333\&quot;,\&quot;verified\&quot;:false,\&quot;profile_image_url\&quot;:\&quot;http://pbs.twimg.com/profile_images/447064846467473408/xtlL0jlp_normal.jpeg\&quot;,\&quot;time_zone\&quot;:null,\&quot;url\&quot;:null,\&quot;contributors_enabled\&quot;:false,\&quot;profile_background_tile\&quot;:false,\&quot;entities\&quot;:{\&quot;description\&quot;:{\&quot;urls\&quot;:[]}},\&quot;statuses_count\&quot;:330,\&quot;follow_request_sent\&quot;:null,\&quot;followers_count\&quot;:26,\&quot;profile_use_background_image\&quot;:true,\&quot;default_profile\&quot;:true,\&quot;following\&quot;:null,\&quot;name\&quot;:\&quot;Edie Murgia\&quot;,\&quot;location\&quot;:\&quot;\&quot;,\&quot;profile_sidebar_fill_color\&quot;:\&quot;DDEEF6\&quot;,\&quot;notifications\&quot;:null}}&quot;,
+    &quot;latLong&quot;: null,
+    &quot;longitude&quot;: null,
+    &quot;latitude&quot;: null,
+    &quot;userFollowers&quot;: 26,
+    &quot;userFollowes&quot;: 108,
+    &quot;place&quot;: null,
+    &quot;sourceUrls&quot;: &quot;https://t.co/t0WCcchSuc&quot;,
+    &quot;hashTags&quot;: &quot;&quot;,
+    &quot;source&quot;: &quot;&amp;lt;a href=\&quot;http://twitter.com/download/android\&quot; rel=\&quot;nofollow\&quot;&amp;gt;Twitter for Android&amp;lt;/a&amp;gt;&quot;,
+    &quot;userID&quot;: &quot;41534914&quot;,
+    &quot;lang&quot;: &quot;en&quot;,
+    &quot;text&quot;: &quot;This is horrible. Further proof that Iran is a barbaric regime that Obozo gave 1.2 billion in cash to. https://t.co/t0WCcchSuc&quot;,
+    &quot;dataID&quot;: &quot;Tweet788744519965630465&quot;,
+    &quot;dataSources&quot;: [],
+    &quot;tweetID&quot;: &quot;788744519965630465&quot;,
+    &quot;dataPools&quot;: [],
+    &quot;userScreenName&quot;: &quot;EmmBliss&quot;,
+    &quot;userName&quot;: null,
+    &quot;userDescription&quot;: &quot;&quot;,
+    &quot;createdAt&quot;: 1476886322000,
+    &quot;inReplyToId&quot;: &quot;-1&quot;,
+    &quot;originalTweetId&quot;: null,
+    &quot;retweetCount&quot;: 0,
+    &quot;favouriteCount&quot;: 0
+  }
+]
+</code></pre>">[
+  {
+    "<span class="hljs-attribute">sentimentRaw</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">annotationPolitical</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">annotationGeo</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">dangerousness</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">stress</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">sentiment</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">rawJson</span>": <span class="hljs-value"><span class="hljs-string">"{\"metadata\":{\"result_type\":\"recent\",\"iso_language_code\":\"en\"},\"quoted_status\":{\"metadata\":{\"result_type\":\"recent\",\"iso_language_code\":\"en\"},\"in_reply_to_status_id_str\":null,\"in_reply_to_status_id\":null,\"created_at\":\"Wed Oct 19 13:53:38 +0000 2016\",\"in_reply_to_user_id_str\":null,\"source\":\"&lt;a href=\\\"http://twitter.com/download/iphone\\\" rel=\\\"nofollow\\\"&gt;Twitter for iPhone&lt;\\/a&gt;\",\"retweet_count\":10,\"retweeted\":false,\"geo\":null,\"in_reply_to_screen_name\":null,\"is_quote_status\":false,\"id_str\":\"788739888006909953\",\"in_reply_to_user_id\":null,\"favorite_count\":4,\"id\":788739888006909953,\"text\":\"American father and son sentenced to 10 years in Iranian prison https://t.co/aPrmwmGnY8\",\"place\":null,\"lang\":\"en\",\"favorited\":false,\"possibly_sensitive\":false,\"coordinates\":null,\"truncated\":false,\"entities\":{\"urls\":[{\"display_url\":\"cnn.com/2016/10/18/wor\\u2026\",\"indices\":[64,87],\"expanded_url\":\"http://www.cnn.com/2016/10/18/world/iranian-americans-sentenced-10-years/index.html\",\"url\":\"https://t.co/aPrmwmGnY8\"}],\"hashtags\":[],\"user_mentions\":[],\"symbols\":[]},\"contributors\":null,\"user\":{\"utc_offset\":-14400,\"friends_count\":5037,\"profile_image_url_https\":\"https://pbs.twimg.com/profile_images/416044148425502720/FRKCS5pH_normal.jpeg\",\"listed_count\":13369,\"profile_background_image_url\":\"http://pbs.twimg.com/profile_background_images/743633139/bae4b64f714195d0c2d2dff162ac596e.jpeg\",\"default_profile_image\":false,\"favourites_count\":6122,\"description\":\"CNN Anchor and Chief Washington Correspondent. Dissecting my tweets with Talmudic meticulousness will result in wrong conclusions. RTs do not = endorsement.\",\"created_at\":\"Fri Apr 25 17:23:28 +0000 2008\",\"is_translator\":false,\"profile_background_image_url_https\":\"https://pbs.twimg.com/profile_background_images/743633139/bae4b64f714195d0c2d2dff162ac596e.jpeg\",\"protected\":false,\"screen_name\":\"jaketapper\",\"id_str\":\"14529929\",\"profile_link_color\":\"088253\",\"is_translation_enabled\":false,\"translator_type\":\"none\",\"id\":14529929,\"geo_enabled\":true,\"profile_background_color\":\"EDECE9\",\"lang\":\"en\",\"has_extended_profile\":false,\"profile_sidebar_border_color\":\"FFFFFF\",\"profile_text_color\":\"634047\",\"verified\":true,\"profile_image_url\":\"http://pbs.twimg.com/profile_images/416044148425502720/FRKCS5pH_normal.jpeg\",\"time_zone\":\"Eastern Time (US &amp; Canada)\",\"url\":\"http://t.co/wwbPcS72qd\",\"contributors_enabled\":false,\"profile_background_tile\":false,\"profile_banner_url\":\"https://pbs.twimg.com/profile_banners/14529929/1353593155\",\"entities\":{\"description\":{\"urls\":[]},\"url\":{\"urls\":[{\"display_url\":\"facebook.com/OutpostBook\",\"indices\":[0,22],\"expanded_url\":\"http://www.facebook.com/OutpostBook\",\"url\":\"http://t.co/wwbPcS72qd\"}]}},\"statuses_count\":128746,\"follow_request_sent\":null,\"followers_count\":584330,\"profile_use_background_image\":true,\"default_profile\":false,\"following\":null,\"name\":\"Jake Tapper\",\"location\":\"\",\"profile_sidebar_fill_color\":\"E3E2DE\",\"notifications\":null}},\"in_reply_to_status_id_str\":null,\"in_reply_to_status_id\":null,\"created_at\":\"Wed Oct 19 14:12:02 +0000 2016\",\"in_reply_to_user_id_str\":null,\"source\":\"&lt;a href=\\\"http://twitter.com/download/android\\\" rel=\\\"nofollow\\\"&gt;Twitter for Android&lt;\\/a&gt;\",\"quoted_status_id\":788739888006909953,\"retweet_count\":0,\"retweeted\":false,\"geo\":null,\"in_reply_to_screen_name\":null,\"is_quote_status\":true,\"id_str\":\"788744519965630465\",\"in_reply_to_user_id\":null,\"favorite_count\":0,\"id\":788744519965630465,\"text\":\"This is horrible. Further proof that Iran is a barbaric regime that Obozo gave 1.2 billion in cash to. https://t.co/t0WCcchSuc\",\"place\":null,\"lang\":\"en\",\"favorited\":false,\"possibly_sensitive\":false,\"coordinates\":null,\"truncated\":false,\"entities\":{\"urls\":[{\"display_url\":\"twitter.com/jaketapper/sta\\u2026\",\"indices\":[103,126],\"expanded_url\":\"https://twitter.com/jaketapper/status/788739888006909953\",\"url\":\"https://t.co/t0WCcchSuc\"}],\"hashtags\":[],\"user_mentions\":[],\"symbols\":[]},\"quoted_status_id_str\":\"788739888006909953\",\"contributors\":null,\"user\":{\"utc_offset\":null,\"friends_count\":108,\"profile_image_url_https\":\"https://pbs.twimg.com/profile_images/447064846467473408/xtlL0jlp_normal.jpeg\",\"listed_count\":1,\"profile_background_image_url\":\"http://abs.twimg.com/images/themes/theme1/bg.png\",\"default_profile_image\":false,\"favourites_count\":339,\"description\":\"\",\"created_at\":\"Thu May 21 05:19:58 +0000 2009\",\"is_translator\":false,\"profile_background_image_url_https\":\"https://abs.twimg.com/images/themes/theme1/bg.png\",\"protected\":false,\"screen_name\":\"EmmBliss\",\"id_str\":\"41534914\",\"profile_link_color\":\"0084B4\",\"is_translation_enabled\":false,\"translator_type\":\"none\",\"id\":41534914,\"geo_enabled\":false,\"profile_background_color\":\"C0DEED\",\"lang\":\"en\",\"has_extended_profile\":true,\"profile_sidebar_border_color\":\"C0DEED\",\"profile_text_color\":\"333333\",\"verified\":false,\"profile_image_url\":\"http://pbs.twimg.com/profile_images/447064846467473408/xtlL0jlp_normal.jpeg\",\"time_zone\":null,\"url\":null,\"contributors_enabled\":false,\"profile_background_tile\":false,\"entities\":{\"description\":{\"urls\":[]}},\"statuses_count\":330,\"follow_request_sent\":null,\"followers_count\":26,\"profile_use_background_image\":true,\"default_profile\":true,\"following\":null,\"name\":\"Edie Murgia\",\"location\":\"\",\"profile_sidebar_fill_color\":\"DDEEF6\",\"notifications\":null}}"</span></span>,
+    "<span class="hljs-attribute">latLong</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">longitude</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">latitude</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">userFollowers</span>": <span class="hljs-value"><span class="hljs-number">26</span></span>,
+    "<span class="hljs-attribute">userFollowes</span>": <span class="hljs-value"><span class="hljs-number">108</span></span>,
+    "<span class="hljs-attribute">place</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">sourceUrls</span>": <span class="hljs-value"><span class="hljs-string">"https://t.co/t0WCcchSuc"</span></span>,
+    "<span class="hljs-attribute">hashTags</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">source</span>": <span class="hljs-value"><span class="hljs-string">"&lt;a href=\"http://twitter.com/download/android\" rel=\"nofollow\"&gt;Twitter for Android&lt;/a&gt;"</span></span>,
+    "<span class="hljs-attribute">userID</span>": <span class="hljs-value"><span class="hljs-string">"41534914"</span></span>,
+    "<span class="hljs-attribute">lang</span>": <span class="hljs-value"><span class="hljs-string">"en"</span></span>,
+    "<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"This is horrible. Further proof that Iran is a barbaric regime that Obozo gave 1.2 billion in cash to. https://t.co/t0WCcchSuc"</span></span>,
+    "<span class="hljs-attribute">dataID</span>": <span class="hljs-value"><span class="hljs-string">"Tweet788744519965630465"</span></span>,
+    "<span class="hljs-attribute">dataSources</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">tweetID</span>": <span class="hljs-value"><span class="hljs-string">"788744519965630465"</span></span>,
+    "<span class="hljs-attribute">dataPools</span>": <span class="hljs-value">[]</span>,
+    "<span class="hljs-attribute">userScreenName</span>": <span class="hljs-value"><span class="hljs-string">"EmmBliss"</span></span>,
+    "<span class="hljs-attribute">userName</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">userDescription</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+    "<span class="hljs-attribute">createdAt</span>": <span class="hljs-value"><span class="hljs-number">1476886322000</span></span>,
+    "<span class="hljs-attribute">inReplyToId</span>": <span class="hljs-value"><span class="hljs-string">"-1"</span></span>,
+    "<span class="hljs-attribute">originalTweetId</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+    "<span class="hljs-attribute">retweetCount</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+    "<span class="hljs-attribute">favouriteCount</span>": <span class="hljs-value"><span class="hljs-number">0</span>
+  </span>}
+]
+</code></pre><h3 id="note-on-the-output-format"><a name="note-on-the-output-format" href="#note-on-the-output-format"></a>Note on the output format</h3><p>On the top level we provide most important Twitter fields (such as text, date, userScreenName, tweet id). In case when the raw Twitter reply is necessary, we can provide a raw JSON as retrieved from the Twitter API. Currently we simply encode it as a string, in a “rawJSON” top level field. In order to make use of it it is necessary to parse this string as JSON object.</p><h2 id="datachannel-query-services"><a name="datachannel-query-services" href="#datachannel-query-services"></a>Datachannel Query services</h2><p>Resources:</p><ul>
+<li><p><a href="#/datachannel">/datachannel</a></p>
+<ul>
+<li><a href="#get-/datachannel">GET /datachannel</a></li><li><a href="#post-/datachannel">POST /datachannel</a></li></ul>
+</li><li><p><a href="#/datachannel/{id}">/datachannel/{id}</a></p>
+<ul>
+<li><a href="#get-/datachannel/{id}">GET /datachannel/{id}</a></li><li><a href="#put-/datachannel/{id}">PUT /datachannel/{id}</a></li><li><a href="#delete-/datachannel/{id}">DELETE /datachannel/{id}</a></li></ul>
+</li></ul><h3 id="get-/datachannel"><a name="get-/datachannel" href="#get-/datachannel"></a>GET /datachannel</h3><p>This method lists all created DataChannels.</p><p>Endpoint:</p><pre><code data-origin="<pre><code>http://gatezkt1:8080/CaptureREST/rest/datachannel
+</code></pre>">http://gatezkt1:8080/CaptureREST/rest/datachannel
+</code></pre><p>Media types formats:</p><ul>
+<li>application/json</li><li>application/xml</li></ul><p>Parameters:</p><p>Example invocation:</p><pre class="bash hljs"><code class="bash" data-origin="<pre><code class=&quot;bash&quot;>curl -X GET -H &quot;Accept: application/json&quot; 'http://gatezkt1:8080/CaptureREST/rest/datachannel/'
+</code></pre>">curl -X GET -H <span class="hljs-string">"Accept: application/json"</span> <span class="hljs-string">'http://gatezkt1:8080/CaptureREST/rest/datachannel/'</span>
+</code></pre><p>Example response:</p><pre><code data-origin="<pre><code>&amp;gt; GET /CaptureREST/rest/datachannel/ HTTP/1.1
+&amp;gt; User-Agent: curl/7.35.0
+&amp;gt; Host: gatezkt1:8080
+&amp;gt; Accept: application/json
+&amp;gt; 
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; Content-Type: application/json
+&amp;lt; Transfer-Encoding: chunked
+&amp;lt; Server: Jetty(9.2.7.v20150116)
+</code></pre>">&gt; GET /CaptureREST/rest/datachannel/ HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: gatezkt1:8080
+&gt; Accept: application/json
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: application/json
+&lt; Transfer-Encoding: chunked
+&lt; Server: Jetty(9.2.7.v20150116)
+</code></pre><pre class="json hljs"><code class="json" data-origin="<pre><code class=&quot;json&quot;>{
+  &quot;dataChannel&quot;: [
+    {
+      &quot;dataChannelState&quot;: null,
+      &quot;maxHistoricalTweetLimit&quot;: null,
+      &quot;tweetRate&quot;: null,
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;endCaptureDate&quot;: &quot;2016-09-24 12:08:19.000&quot;,
+      &quot;startCaptureDate&quot;: &quot;2016-06-24 12:08:19.000&quot;,
+      &quot;dataSources&quot;: [
+        {
+          &quot;twitter&quot;: {
+            &quot;chronologicalOrder&quot;: true,
+            &quot;fromLastTweetId&quot;: true,
+            &quot;lastTweetId&quot;: 779640130860638200,
+            &quot;keywords&quot;: &quot;#brexit OR #bremain OR #voteleave OR #remain OR #brexitornot&quot;,
+            &quot;type&quot;: &quot;Twitter&quot;,
+            &quot;sourceID&quot;: &quot;fb853c3c-02b7-44c4-aac3-bb887674c2f0&quot;
+          }
+        }
+      ],
+      &quot;totalTweetCount&quot;: null,
+      &quot;channelID&quot;: &quot;6c9fcb94&quot;,
+      &quot;name&quot;: &quot;Brexit Referendum&quot;,
+      &quot;type&quot;: &quot;search&quot;,
+      &quot;description&quot;: &quot;Brexit Referendum&quot;,
+      &quot;creationDate&quot;: &quot;2016-06-24 10:10:20.802&quot;,
+      &quot;updateDate&quot;: &quot;2016-09-24 11:15:02.289&quot;
+    },
+    {
+      &quot;dataChannelState&quot;: null,
+      &quot;maxHistoricalTweetLimit&quot;: null,
+      &quot;tweetRate&quot;: null,
+      &quot;status&quot;: &quot;active&quot;,
+      &quot;endCaptureDate&quot;: &quot;2017-09-08 03:19:56.000&quot;,
+      &quot;startCaptureDate&quot;: &quot;2016-08-31 21:31:10.000&quot;,
+      &quot;dataSources&quot;: [
+        {
+          &quot;twitter&quot;: {
+            &quot;chronologicalOrder&quot;: true,
+            &quot;fromLastTweetId&quot;: true,
+            &quot;lastTweetId&quot;: 788788313079574500,
+            &quot;keywords&quot;: &quot;LRens&quot;,
+            &quot;type&quot;: &quot;Twitter&quot;,
+            &quot;sourceID&quot;: &quot;9a75d3ce-130a-44f1-9897-0fc80ec5ea45&quot;
+          }
+        },
+        {
+          &quot;twitter&quot;: {
+            &quot;chronologicalOrder&quot;: true,
+            &quot;fromLastTweetId&quot;: true,
+            &quot;lastTweetId&quot;: 788777530987802600,
+            &quot;keywords&quot;: &quot;#ndg&quot;,
+            &quot;type&quot;: &quot;Twitter&quot;,
+            &quot;sourceID&quot;: &quot;42df10f3-f8e9-448f-a7c7-eb8a0214be72&quot;
+          }
+        },
+        {
+          &quot;twitter&quot;: {
+            &quot;chronologicalOrder&quot;: true,
+            &quot;fromLastTweetId&quot;: true,
+            &quot;lastTweetId&quot;: 787588837715374100,
+            &quot;keywords&quot;: &quot;#nachrichtendienstgesetz&quot;,
+            &quot;type&quot;: &quot;Twitter&quot;,
+            &quot;sourceID&quot;: &quot;627d2d42-75ab-42dd-b719-b26747d36dc3&quot;
+          }
+        }
+      ],
+      &quot;totalTweetCount&quot;: null,
+      &quot;channelID&quot;: &quot;cb6e4a1d&quot;,
+      &quot;name&quot;: &quot;Intelligence reform&quot;,
+      &quot;type&quot;: &quot;search&quot;,
+      &quot;description&quot;: &quot;Intelligence reform&quot;,
+      &quot;creationDate&quot;: &quot;2016-09-07 21:31:10.357&quot;,
+      &quot;updateDate&quot;: &quot;2016-10-19 17:07:58.555&quot;
+    }
+  ]
+}
+</code></pre>">{
+  "<span class="hljs-attribute">dataChannel</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">dataChannelState</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">maxHistoricalTweetLimit</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">tweetRate</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"active"</span></span>,
+      "<span class="hljs-attribute">endCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-09-24 12:08:19.000"</span></span>,
+      "<span class="hljs-attribute">startCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-06-24 12:08:19.000"</span></span>,
+      "<span class="hljs-attribute">dataSources</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">twitter</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">chronologicalOrder</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+            "<span class="hljs-attribute">fromLastTweetId</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+            "<span class="hljs-attribute">lastTweetId</span>": <span class="hljs-value"><span class="hljs-number">779640130860638200</span></span>,
+            "<span class="hljs-attribute">keywords</span>": <span class="hljs-value"><span class="hljs-string">"#brexit OR #bremain OR #voteleave OR #remain OR #brexitornot"</span></span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Twitter"</span></span>,
+            "<span class="hljs-attribute">sourceID</span>": <span class="hljs-value"><span class="hljs-string">"fb853c3c-02b7-44c4-aac3-bb887674c2f0"</span>
+          </span>}
+        </span>}
+      ]</span>,
+      "<span class="hljs-attribute">totalTweetCount</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">channelID</span>": <span class="hljs-value"><span class="hljs-string">"6c9fcb94"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Brexit Referendum"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"search"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Brexit Referendum"</span></span>,
+      "<span class="hljs-attribute">creationDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-06-24 10:10:20.802"</span></span>,
+      "<span class="hljs-attribute">updateDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-09-24 11:15:02.289"</span>
+    </span>},
+    {
+      "<span class="hljs-attribute">dataChannelState</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">maxHistoricalTweetLimit</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">tweetRate</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"active"</span></span>,
+      "<span class="hljs-attribute">endCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2017-09-08 03:19:56.000"</span></span>,
+      "<span class="hljs-attribute">startCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-08-31 21:31:10.000"</span></span>,
+      "<span class="hljs-attribute">dataSources</span>": <span class="hljs-value">[
+        {
+          "<span class="hljs-attribute">twitter</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">chronologicalOrder</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+            "<span class="hljs-attribute">fromLastTweetId</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+            "<span class="hljs-attribute">lastTweetId</span>": <span class="hljs-value"><span class="hljs-number">788788313079574500</span></span>,
+            "<span class="hljs-attribute">keywords</span>": <span class="hljs-value"><span class="hljs-string">"LRens"</span></span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Twitter"</span></span>,
+            "<span class="hljs-attribute">sourceID</span>": <span class="hljs-value"><span class="hljs-string">"9a75d3ce-130a-44f1-9897-0fc80ec5ea45"</span>
+          </span>}
+        </span>},
+        {
+          "<span class="hljs-attribute">twitter</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">chronologicalOrder</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+            "<span class="hljs-attribute">fromLastTweetId</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+            "<span class="hljs-attribute">lastTweetId</span>": <span class="hljs-value"><span class="hljs-number">788777530987802600</span></span>,
+            "<span class="hljs-attribute">keywords</span>": <span class="hljs-value"><span class="hljs-string">"#ndg"</span></span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Twitter"</span></span>,
+            "<span class="hljs-attribute">sourceID</span>": <span class="hljs-value"><span class="hljs-string">"42df10f3-f8e9-448f-a7c7-eb8a0214be72"</span>
+          </span>}
+        </span>},
+        {
+          "<span class="hljs-attribute">twitter</span>": <span class="hljs-value">{
+            "<span class="hljs-attribute">chronologicalOrder</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+            "<span class="hljs-attribute">fromLastTweetId</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+            "<span class="hljs-attribute">lastTweetId</span>": <span class="hljs-value"><span class="hljs-number">787588837715374100</span></span>,
+            "<span class="hljs-attribute">keywords</span>": <span class="hljs-value"><span class="hljs-string">"#nachrichtendienstgesetz"</span></span>,
+            "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Twitter"</span></span>,
+            "<span class="hljs-attribute">sourceID</span>": <span class="hljs-value"><span class="hljs-string">"627d2d42-75ab-42dd-b719-b26747d36dc3"</span>
+          </span>}
+        </span>}
+      ]</span>,
+      "<span class="hljs-attribute">totalTweetCount</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+      "<span class="hljs-attribute">channelID</span>": <span class="hljs-value"><span class="hljs-string">"cb6e4a1d"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Intelligence reform"</span></span>,
+      "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"search"</span></span>,
+      "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">"Intelligence reform"</span></span>,
+      "<span class="hljs-attribute">creationDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-09-07 21:31:10.357"</span></span>,
+      "<span class="hljs-attribute">updateDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-10-19 17:07:58.555"</span>
+    </span>}
+  ]
+</span>}
+</code></pre><h3 id="post-/datachannel"><a name="post-/datachannel" href="#post-/datachannel"></a>POST /datachannel</h3><p>This method provides means for creating new Data Channels.</p><p>Endpoint:</p><pre><code data-origin="<pre><code>http://gatezkt1:8080/CaptureREST/rest/datachannel
+</code></pre>">http://gatezkt1:8080/CaptureREST/rest/datachannel
+</code></pre><p>Accepts Media types formats:</p><ul>
+<li>application/json</li><li>application/xml</li></ul><p>Parameters:</p><p>The method accepts datachannel definition as POST payload. The Datachannel format is the same as retrieved from the <a href="#get-/datachannel/{id}">GET method</a>:</p><pre class="json hljs"><code class="json" data-origin="<pre><code class=&quot;json&quot;>{
+    &quot;dataSources&quot;: [
+        {
+            &quot;twitter&quot;: {
+                &quot;keywords&quot;: &quot;carbonero casillas&quot;,
+                &quot;type&quot;: &quot;Twitter&quot;
+            }
+        }
+    ],
+    &quot;startCaptureDate&quot;: &quot;2016-06-08 18:17:33.000&quot;,
+    &quot;endCaptureDate&quot;: &quot;2016-06-08 18:20:33.000&quot;,
+    &quot;name&quot;: &quot;My new DataChannel&quot;,
+    &quot;type&quot;: &quot;search&quot;
+}
+</code></pre>">{
+    "<span class="hljs-attribute">dataSources</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">twitter</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">keywords</span>": <span class="hljs-value"><span class="hljs-string">"carbonero casillas"</span></span>,
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Twitter"</span>
+            </span>}
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">startCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-06-08 18:17:33.000"</span></span>,
+    "<span class="hljs-attribute">endCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-06-08 18:20:33.000"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"My new DataChannel"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"search"</span>
+</span>}
+</code></pre><p>Example invocation:</p><pre class="bash hljs"><code class="bash" data-origin="<pre><code class=&quot;bash&quot;>curl -X POST -d @new-datachannel.json -H &quot;Content-Type: application/json&quot;  http://gatezkt1:8080/CaptureREST/rest/datachannel/
+</code></pre>">curl -X POST <span class="hljs-operator">-d</span> @new-datachannel.json -H <span class="hljs-string">"Content-Type: application/json"</span>  http://gatezkt1:<span class="hljs-number">8080</span>/CaptureREST/rest/datachannel/
+</code></pre><p>Example response:</p><pre><code data-origin="<pre><code>&amp;gt; POST /CaptureREST/rest/datachannel/ HTTP/1.1
+&amp;gt; User-Agent: curl/7.35.0
+&amp;gt; Host: gatezkt1:8080
+&amp;gt; Accept: */*
+&amp;gt; Content-Type: application/json
+&amp;gt; Content-Length: 302
+&amp;gt; 
+* upload completely sent off: 302 out of 302 bytes
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; Content-Type: application/json
+&amp;lt; Transfer-Encoding: chunked
+&amp;lt; Server: Jetty(9.2.2.v20140723)
+</code></pre>">&gt; POST /CaptureREST/rest/datachannel/ HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: gatezkt1:8080
+&gt; Accept: */*
+&gt; Content-Type: application/json
+&gt; Content-Length: 302
+&gt; 
+* upload completely sent off: 302 out of 302 bytes
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: application/json
+&lt; Transfer-Encoding: chunked
+&lt; Server: Jetty(9.2.2.v20140723)
+</code></pre><pre class="json hljs"><code class="json" data-origin="<pre><code class=&quot;json&quot;>{&quot;state&quot;:&quot;200 OK&quot;,&quot;data&quot;:{&quot;_global_id&quot;:&quot;ec473cd3&quot;}}
+</code></pre>">{"<span class="hljs-attribute">state</span>":<span class="hljs-value"><span class="hljs-string">"200 OK"</span></span>,"<span class="hljs-attribute">data</span>":<span class="hljs-value">{"<span class="hljs-attribute">_global_id</span>":<span class="hljs-value"><span class="hljs-string">"ec473cd3"</span></span>}</span>}
+</code></pre><p>The return value is the status of the operation and the ID of the newly created Data Channel.</p><h3 id="get-/datachannel/{id}"><a name="get-/datachannel/{id}" href="#get-/datachannel/{id}"></a>GET /datachannel/{id}</h3><p>This method get a Data Channel by Id from the Capture storage.</p><p>Endpoint:</p><pre><code data-origin="<pre><code>http://gatezkt1:8080/CaptureREST/rest/datachannel/{id}
+</code></pre>">http://gatezkt1:8080/CaptureREST/rest/datachannel/{id}
+</code></pre><p>Media types formats:</p><ul>
+<li>application/json</li><li>application/xml</li></ul><p>Parameters:</p><p>The ID of the Data Channel is provided in URL</p><p>Example invocation:</p><pre class="bash hljs"><code class="bash" data-origin="<pre><code class=&quot;bash&quot;>curl -X GET -H &quot;Accept: application/json&quot; 'http://gatezkt1:8080/CaptureREST/rest/datachannel/ec473cd3'
+</code></pre>">curl -X GET -H <span class="hljs-string">"Accept: application/json"</span> <span class="hljs-string">'http://gatezkt1:8080/CaptureREST/rest/datachannel/ec473cd3'</span>
+</code></pre><p>Example response:</p><pre><code data-origin="<pre><code>&amp;gt; GET /CaptureREST/rest/datachannel/ec473cd3 HTTP/1.1
+&amp;gt; User-Agent: curl/7.35.0
+&amp;gt; Host: gatezkt1:8080
+&amp;gt; Accept: application/json
+&amp;gt; 
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; Content-Type: application/json
+&amp;lt; Transfer-Encoding: chunked
+* Server Jetty(9.2.2.v20140723) is not blacklisted
+&amp;lt; Server: Jetty(9.2.2.v20140723)
+&amp;lt;
+</code></pre>">&gt; GET /CaptureREST/rest/datachannel/ec473cd3 HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: gatezkt1:8080
+&gt; Accept: application/json
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: application/json
+&lt; Transfer-Encoding: chunked
+* Server Jetty(9.2.2.v20140723) is not blacklisted
+&lt; Server: Jetty(9.2.2.v20140723)
+&lt;
+</code></pre><pre class="json hljs"><code class="json" data-origin="<pre><code class=&quot;json&quot;>{
+  &quot;dataChannelState&quot;: null,
+  &quot;maxHistoricalTweetLimit&quot;: null,
+  &quot;tweetRate&quot;: null,
+  &quot;status&quot;: &quot;active&quot;,
+  &quot;endCaptureDate&quot;: &quot;2016-06-08 18:20:33.000&quot;,
+  &quot;startCaptureDate&quot;: &quot;2016-06-08 18:17:33.000&quot;,
+  &quot;dataSources&quot;: [
+    {
+      &quot;twitter&quot;: {
+        &quot;chronologicalOrder&quot;: false,
+        &quot;fromLastTweetId&quot;: false,
+        &quot;lastTweetId&quot;: 0,
+        &quot;keywords&quot;: &quot;carbonero casillas&quot;,
+        &quot;type&quot;: &quot;Twitter&quot;,
+        &quot;sourceID&quot;: &quot;0792cc8d-53d2-4eeb-8ba6-a6785db2e7ba&quot;
+      }
+    }
+  ],
+  &quot;totalTweetCount&quot;: null,
+  &quot;channelID&quot;: &quot;ec473cd3&quot;,
+  &quot;name&quot;: &quot;Test&quot;,
+  &quot;type&quot;: &quot;search&quot;,
+  &quot;description&quot;: &quot;&quot;,
+  &quot;creationDate&quot;: &quot;2016-10-19 17:37:44.675&quot;,
+  &quot;updateDate&quot;: &quot;2016-10-19 17:37:44.675&quot;
+}
+</code></pre>">{
+  "<span class="hljs-attribute">dataChannelState</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">maxHistoricalTweetLimit</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">tweetRate</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">status</span>": <span class="hljs-value"><span class="hljs-string">"active"</span></span>,
+  "<span class="hljs-attribute">endCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-06-08 18:20:33.000"</span></span>,
+  "<span class="hljs-attribute">startCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-06-08 18:17:33.000"</span></span>,
+  "<span class="hljs-attribute">dataSources</span>": <span class="hljs-value">[
+    {
+      "<span class="hljs-attribute">twitter</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">chronologicalOrder</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">fromLastTweetId</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
+        "<span class="hljs-attribute">lastTweetId</span>": <span class="hljs-value"><span class="hljs-number">0</span></span>,
+        "<span class="hljs-attribute">keywords</span>": <span class="hljs-value"><span class="hljs-string">"carbonero casillas"</span></span>,
+        "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Twitter"</span></span>,
+        "<span class="hljs-attribute">sourceID</span>": <span class="hljs-value"><span class="hljs-string">"0792cc8d-53d2-4eeb-8ba6-a6785db2e7ba"</span>
+      </span>}
+    </span>}
+  ]</span>,
+  "<span class="hljs-attribute">totalTweetCount</span>": <span class="hljs-value"><span class="hljs-literal">null</span></span>,
+  "<span class="hljs-attribute">channelID</span>": <span class="hljs-value"><span class="hljs-string">"ec473cd3"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Test"</span></span>,
+  "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"search"</span></span>,
+  "<span class="hljs-attribute">description</span>": <span class="hljs-value"><span class="hljs-string">""</span></span>,
+  "<span class="hljs-attribute">creationDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-10-19 17:37:44.675"</span></span>,
+  "<span class="hljs-attribute">updateDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-10-19 17:37:44.675"</span>
+</span>}
+</code></pre><h3 id="put-/datachannel/{id}"><a name="put-/datachannel/{id}" href="#put-/datachannel/{id}"></a>PUT /datachannel/{id}</h3><p>This method updates Data Channel with the given {id}.</p><p>Endpoint:</p><pre><code data-origin="<pre><code>http://gatezkt1:8080/CaptureREST/rest/datachannel/{id}
+</code></pre>">http://gatezkt1:8080/CaptureREST/rest/datachannel/{id}
+</code></pre><p>Media types formats:</p><ul>
+<li>application/json</li><li>application/xml</li></ul><p>Parameters:</p><ul>
+<li>The ID of the Data Channel is provided in URL</li><li>Data Channel is provided in the PUT payload. The Datachannel format is the same as retrieved from the GET method.</li><li>Note that it is mandatory to use sourceID in the “dataSources” in order to update concrete Data Source keywords, otherwise a new DataSource object will be added. Yuo can use the <a href="#get-/datachannel/{id}">GET method</a> to retireve necessary IDs. The easiest way is to simply use the response from the <a href="#get-/datachannel/{id}">GET method</a> and modify necessary fields.</li></ul><p>JSON input for the PUT method:</p><pre class="json hljs"><code class="json" data-origin="<pre><code class=&quot;json&quot;>{
+
+    &quot;dataSources&quot;: [
+        {
+            &quot;twitter&quot;: {
+                &quot;keywords&quot;: &quot;carbonero casillas updated&quot;,
+                &quot;type&quot;: &quot;Twitter&quot;,
+                &quot;sourceID&quot;: &quot;0792cc8d-53d2-4eeb-8ba6-a6785db2e7ba&quot;
+            }
+        }
+    ],
+    &quot;endCaptureDate&quot;: &quot;2016-06-08 18:20:33.000&quot;,
+    &quot;name&quot;: &quot;Test&quot;,
+    &quot;startCaptureDate&quot;: &quot;2016-06-08 18:17:33.000&quot;,
+    &quot;type&quot;: &quot;search&quot;
+
+}
+</code></pre>">{
+
+    "<span class="hljs-attribute">dataSources</span>": <span class="hljs-value">[
+        {
+            "<span class="hljs-attribute">twitter</span>": <span class="hljs-value">{
+                "<span class="hljs-attribute">keywords</span>": <span class="hljs-value"><span class="hljs-string">"carbonero casillas updated"</span></span>,
+                "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"Twitter"</span></span>,
+                "<span class="hljs-attribute">sourceID</span>": <span class="hljs-value"><span class="hljs-string">"0792cc8d-53d2-4eeb-8ba6-a6785db2e7ba"</span>
+            </span>}
+        </span>}
+    ]</span>,
+    "<span class="hljs-attribute">endCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-06-08 18:20:33.000"</span></span>,
+    "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"Test"</span></span>,
+    "<span class="hljs-attribute">startCaptureDate</span>": <span class="hljs-value"><span class="hljs-string">"2016-06-08 18:17:33.000"</span></span>,
+    "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"search"</span>
+
+</span>}
+</code></pre><p>Example invocation:</p><pre class="bash hljs"><code class="bash" data-origin="<pre><code class=&quot;bash&quot;>curl -X PUT -d @modified-datachannel.json -H &quot;Content-Type: application/json&quot; 'http://gatezkt1:8080/CaptureREST/rest/datachannel/ec473cd3'
+</code></pre>">curl -X PUT <span class="hljs-operator">-d</span> @modified-datachannel.json -H <span class="hljs-string">"Content-Type: application/json"</span> <span class="hljs-string">'http://gatezkt1:8080/CaptureREST/rest/datachannel/ec473cd3'</span>
+</code></pre><p>Example response:</p><pre><code data-origin="<pre><code>&amp;gt; PUT /CaptureREST/rest/datachannel/ec473cd3 HTTP/1.1
+&amp;gt; User-Agent: curl/7.35.0
+&amp;gt; Host: localhost:8080
+&amp;gt; Accept: */*
+&amp;gt; Content-Type: application/json
+&amp;gt; Content-Length: 363
+&amp;gt; 
+* upload completely sent off: 363 out of 363 bytes
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; Content-Type: application/json
+&amp;lt; Transfer-Encoding: chunked
+&amp;lt; Server: Jetty(9.2.2.v20140723)
+</code></pre>">&gt; PUT /CaptureREST/rest/datachannel/ec473cd3 HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: localhost:8080
+&gt; Accept: */*
+&gt; Content-Type: application/json
+&gt; Content-Length: 363
+&gt; 
+* upload completely sent off: 363 out of 363 bytes
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: application/json
+&lt; Transfer-Encoding: chunked
+&lt; Server: Jetty(9.2.2.v20140723)
+</code></pre><pre class="json hljs"><code class="json" data-origin="<pre><code class=&quot;json&quot;>
+{&quot;state&quot;:&quot;200 OK&quot;,&quot;data&quot;:{&quot;_global_id&quot;:&quot;ec473cd3&quot;}}
+</code></pre>">
+{"<span class="hljs-attribute">state</span>":<span class="hljs-value"><span class="hljs-string">"200 OK"</span></span>,"<span class="hljs-attribute">data</span>":<span class="hljs-value">{"<span class="hljs-attribute">_global_id</span>":<span class="hljs-value"><span class="hljs-string">"ec473cd3"</span></span>}</span>}
+</code></pre><h3 id="delete-/datachannel/{id}"><a name="delete-/datachannel/{id}" href="#delete-/datachannel/{id}"></a>DELETE /datachannel/{id}</h3><p>This method removes the Data Channel with the given {id}. The delete is logical, and removed datachannel will appear in the list of all datachannels with the property “state”: “inactive”.</p><p>Endpoint:</p><pre><code data-origin="<pre><code>http://gatezkt1:8080/CaptureREST/rest/datachannel/{id}
+</code></pre>">http://gatezkt1:8080/CaptureREST/rest/datachannel/{id}
+</code></pre><p>Media types formats:</p><ul>
+<li>application/json</li><li>application/xml</li></ul><p>Parameters:</p><p>The ID of the Data Channel is provided in URL.</p><p>Example invocation:</p><pre class="bash hljs"><code class="bash" data-origin="<pre><code class=&quot;bash&quot;>curl -X DELETE -H &quot;Accept: application/json&quot; 'http://gatezkt1:8080/CaptureREST/rest/datachannel/ec473cd3'
+</code></pre>">curl -X DELETE -H <span class="hljs-string">"Accept: application/json"</span> <span class="hljs-string">'http://gatezkt1:8080/CaptureREST/rest/datachannel/ec473cd3'</span>
+</code></pre><p>Example response:</p><pre><code data-origin="<pre><code>&amp;gt; DELETE /CaptureREST/rest/datachannel/ec473cd3 HTTP/1.1
+&amp;gt; User-Agent: curl/7.35.0
+&amp;gt; Host: gatezkt1:8080
+&amp;gt; Accept: */*
+&amp;gt; Content-Type: application/json
+&amp;gt; 
+&amp;lt; HTTP/1.1 200 OK
+&amp;lt; Content-Type: application/json
+&amp;lt; Transfer-Encoding: chunked
+* Server Jetty(9.2.2.v20140723) is not blacklisted
+&amp;lt; Server: Jetty(9.2.2.v20140723)
+&amp;lt;
+</code></pre>">&gt; DELETE /CaptureREST/rest/datachannel/ec473cd3 HTTP/1.1
+&gt; User-Agent: curl/7.35.0
+&gt; Host: gatezkt1:8080
+&gt; Accept: */*
+&gt; Content-Type: application/json
+&gt; 
+&lt; HTTP/1.1 200 OK
+&lt; Content-Type: application/json
+&lt; Transfer-Encoding: chunked
+* Server Jetty(9.2.2.v20140723) is not blacklisted
+&lt; Server: Jetty(9.2.2.v20140723)
+&lt;
+</code></pre><pre class="json hljs"><code class="json" data-origin="<pre><code class=&quot;json&quot;>
+{&quot;state&quot;:&quot;200 OK&quot;,&quot;data&quot;:{&quot;_global_id&quot;:&quot;ec473cd3&quot;}}
+</code></pre>">
+{"<span class="hljs-attribute">state</span>":<span class="hljs-value"><span class="hljs-string">"200 OK"</span></span>,"<span class="hljs-attribute">data</span>":<span class="hljs-value">{"<span class="hljs-attribute">_global_id</span>":<span class="hljs-value"><span class="hljs-string">"ec473cd3"</span></span>}</span>}
+</code></pre>
+
+<footer style="position:fixed; font-size:.8em; text-align:right; bottom:0px; margin-left:-25px; height:20px; width:100%;">generated by <a href="http://pad.haroopress.com" target="_blank">haroopad</a></footer>
+</body>
+</html>

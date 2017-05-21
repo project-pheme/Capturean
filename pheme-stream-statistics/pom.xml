@@ -1,0 +1,216 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>atos.knowledgelab.capture</groupId>
+  <artifactId>pheme-stream-statistics</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>pheme-stream-statistics Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.7</jdk.version>		
+	</properties>
+	
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>atos.knowledgelab.capture</groupId>
+			<artifactId>capture-stream</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			
+			<exclusions>
+				<exclusion>
+					<groupId>org.apache.flink</groupId>
+					<artifactId>flink-core</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.6.3</version>
+		</dependency>
+
+		<!-- Servlet -->
+<!-- Web development - only dor development (scope: PROVIDED) -->		
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+ 			<scope>provided</scope> 
+		</dependency>
+		<dependency>
+	        <groupId>org.eclipse.jetty</groupId>
+	        <artifactId>jetty-jsp</artifactId>
+	        <version>9.2.7.v20150116</version>
+	        <scope>provided</scope>
+	    </dependency>
+	    <dependency>
+			<groupId>org.eclipse.jetty.websocket</groupId>
+			<artifactId>websocket-server</artifactId>
+			<version>9.2.7.v20150116</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Embedded Database -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<version>1.4.190</version>
+		</dependency>
+		<dependency>
+			<groupId>com.j256.ormlite</groupId>
+			<artifactId>ormlite-jdbc</artifactId>
+			<version>4.48</version>
+		</dependency>
+		<dependency>
+		    <groupId>javax.mail</groupId>
+		    <artifactId>javax.mail-api</artifactId>
+		    <version>1.5.6</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.mail</groupId>
+			<artifactId>javax.mail</artifactId>
+			<version>1.5.6</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.ini4j</groupId>
+		    <artifactId>ini4j</artifactId>
+		    <version>0.5.4</version>
+		</dependency>
+		
+	</dependencies>
+	
+	
+		<!-- Profile configuration -->
+	<profiles>
+	    <!-- The configuration of the development profile -->
+	    <profile>
+	        <id>journalist-dashboard</id>
+	        <!-- The development profile is active by default -->
+	        <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+	        <properties>
+	            <!--
+	                Specifies the build.profile.id property that must be equal than the name of
+	                the directory that contains the profile specific configuration file.
+	                Because the name of the directory that contains the configuration file of the
+	                development profile is dev, we must set the value of the build.profile.id 
+	                property to dev.
+	            -->
+	            <build.profile.id>journalist-dashboard</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/journalist-dashboard</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	    <!-- The configuration of the production profile -->
+	    <profile>
+	        <id>medical-dashboard</id>
+	        <properties>
+	            <!--
+	                Specifies the build.profile.id property that must be equal than the name of
+	                the directory that contains the profile specific configuration file.
+	                Because the name of the directory that contains the configuration file of the
+	                production profile is prod, we must set the value of the build.profile.id 
+	                property to prod.
+	            -->
+	            <build.profile.id>medical-dashboard</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/medical-dashboard</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	    <!-- The configuration of the production profile -->
+	    <profile>
+	        <id>ontotext-dashboard</id>
+	        <properties>
+	            <!--
+	                Specifies the build.profile.id property that must be equal than the name of
+	                the directory that contains the profile specific configuration file.
+	                Because the name of the directory that contains the configuration file of the
+	                production profile is prod, we must set the value of the build.profile.id 
+	                property to prod.
+	            -->
+	            <build.profile.id>ontotext-dashboard</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/ontotext-dashboard</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+		<!-- Debug profile -->
+	    <profile>
+	        <id>localhost</id>
+	        <properties>
+	            <!--
+	                Specifies the build.profile.id property that must be equal than the name of
+	                the directory that contains the profile specific configuration file.
+	                Because the name of the directory that contains the configuration file of the
+	                production profile is prod, we must set the value of the build.profile.id 
+	                property to prod.
+	            -->
+	            <build.profile.id>localhost</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/localhost</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	</profiles>
+	
+	
+	
+	<build>
+		<finalName>pheme-stream-statistics</finalName>
+		
+		<plugins>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+					<webResource>
+                        <directory>profiles/${build.profile.id}/</directory>
+                    </webResource>
+				</configuration>
+			</plugin>
+			
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		
+		</plugins>
+	</build>
+</project>

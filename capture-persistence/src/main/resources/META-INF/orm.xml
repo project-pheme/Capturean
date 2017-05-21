@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity-mappings version="2.0"
+	xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_2_0.xsd">
+	<description>DataNucleus JPA for Capture Model</description>
+
+	<package>atos.knowledgelab.capture.bean</package>
+
+	<entity class="atos.knowledgelab.capture.bean.DataChannel" name="DataChannel">
+		<table name="data_channel" />
+		<attributes>
+			<id name="channelID">
+				<column name="channelID" />
+			</id>
+			<basic name="name">
+				<column name="name" />
+			</basic>
+			<basic name="description">
+				<column name="description" />
+			</basic>
+			<basic name="status">
+				<column name="status" />
+			</basic>
+			<basic name="creationDate">
+				<column name="creationDate" />
+			</basic>
+			<basic name="updateDate">
+				<column name="updateDate" />
+			</basic>
+			<basic name="startCaptureDate">
+				<column name="startCaptureDate" />
+			</basic>
+			<basic name="endCaptureDate">
+				<column name="endCaptureDate" />
+			</basic>
+			<one-to-many name="dataSources" target-entity="atos.knowledgelab.capture.bean.DataSource"
+				fetch="LAZY">
+				<join-column name="dataSources" updatable="true"
+					nullable="true" />
+				<cascade>
+					<cascade-all />
+				</cascade>
+			</one-to-many>
+		</attributes>
+	</entity>
+
+	<entity class="atos.knowledgelab.capture.bean.DataSource" name="DataSource">
+		<table name="data_source" />
+		<inheritance strategy="SINGLE_TABLE" />
+		<discriminator-column name="type"
+			discriminator-type="STRING" />
+		<attributes>
+			<id name="sourceID">
+				<column name="sourceID" />
+			</id>
+			<basic name="dstype">
+				<column name="dstype" />
+			</basic>
+		</attributes>
+	</entity>
+
+	<entity class="atos.knowledgelab.capture.bean.TwitterDataSource" name="TwitterDataSource">
+		<table name="data_source" />
+		<discriminator-value>Twitter</discriminator-value>
+		<attributes>
+			<basic name="keywords">
+				<column name="keywords" />
+			</basic>
+			<!-- <basic name="tweets">
+				<column name="tweets" />
+			</basic> -->
+			<many-to-many name="tweets" target-entity="atos.knowledgelab.capture.bean.Tweet"
+				fetch="LAZY" mapped-by="dataSources">
+				<cascade>
+					<cascade-merge />
+					<cascade-detach />
+				</cascade>
+			</many-to-many>
+		</attributes>
+	</entity>
+
+	<entity class="atos.knowledgelab.capture.bean.DataPool" name="DataPool">
+		<table name="data_pool" />
+		<attributes>
+			<id name="poolID">
+				<column name="poolID" />
+			</id>
+			<basic name="name">
+				<column name="name" />
+			</basic>
+			<basic name="description">
+				<column name="description" />
+			</basic>
+			<many-to-many name="data" target-entity="atos.knowledgelab.capture.bean.CaptureData"
+				fetch="LAZY" mapped-by="dataPools">
+				<cascade>
+					<cascade-merge />
+					<cascade-detach />
+				</cascade>
+			</many-to-many>
+			<element-collection name="keywords">
+            	<column name="keywords"/>
+            		<collection-table name="keywords">
+                		<join-column name="poolID"/>
+            		</collection-table>
+        	</element-collection>			
+		</attributes>
+	</entity>
+
+	<entity class="atos.knowledgelab.capture.bean.CaptureData" name="CaptureData">
+		<table name="capture_data" />		
+		<inheritance strategy="TABLE_PER_CLASS"/>		
+		<attributes>
+			<id name="dataID">
+				<column name="dataID" />
+				<!-- <generated-value strategy="AUTO"/> -->				
+			</id>
+			<many-to-many name="dataPools" target-entity="atos.knowledgelab.capture.bean.DataPool"
+				fetch="LAZY">
+				<join-table name="data_dp">
+					<join-column name="dataID" />
+					<inverse-join-column name="poolID" />
+				</join-table>
+				<cascade>
+					<cascade-merge />
+					<cascade-detach />
+				</cascade>
+			</many-to-many>
+		</attributes>
+	</entity>
+
+	<entity class="atos.knowledgelab.capture.bean.Tweet" name="Tweet">
+		<table name="capture_tweet" />
+		<attributes>
+			<basic name="tweetID">
+				<column name="tweetID" />
+			</basic>
+			<basic name="text">
+				<column name="text" />
+			</basic>
+			<basic name="source">
+				<column name="source" />
+			</basic>
+			<basic name="userScreenName">
+				<column name="userScreenName" />
+			</basic>
+			<basic name="createdAt">
+				<column name="createdAt" />
+			</basic>
+			<basic name="retweetCount">
+				<column name="retweetCount" />
+			</basic>
+			<basic name="favouriteCount">
+				<column name="favouriteCount" />
+			</basic>
+			<basic name="inReplyToId">
+				<column name="inReplyToId" />
+			</basic>
+			<basic name="originalTweetId">
+				<column name="originalTweetId" />
+			</basic>
+			<basic name="hashTags">
+				<column name="hashTags" />
+			</basic>
+			<basic name="sourceUrls">
+				<column name="sourceUrls" />
+			</basic>
+			<basic name="userID">
+				<column name="userID" />
+			</basic>
+			<basic name="userFollowes">
+				<column name="userFollowes" />
+			</basic>
+			<basic name="userFollowers">
+				<column name="userFollowers" />
+			</basic>
+			<basic name="place">
+				<column name="place" />
+			</basic>
+			<basic name="sentiment">
+				<column name="sentiment" />
+			</basic>
+			<basic name="stress">
+				<column name="stress" />
+			</basic>
+			<basic name="dangerousness">
+				<column name="dangerousness" />
+			</basic>			
+			<basic name="rawJson">				
+				<column name="json"/>
+				<lob/>
+			</basic>
+			<many-to-many name="dataSources"
+				target-entity="atos.knowledgelab.capture.bean.TwitterDataSource" fetch="LAZY">
+				<join-table name="tweet_ds">
+					<join-column name="dataID" />
+					<inverse-join-column name="sourceID" />
+				</join-table>
+				<cascade>
+					<cascade-merge />
+					<cascade-detach />
+				</cascade>
+			</many-to-many>
+		</attributes>
+	</entity>
+
+	<entity class="atos.knowledgelab.capture.bean.TwitterUser" name="TwitterUser">
+		<table name="twitter_user" />
+		<attributes>
+			<id name="id">
+				<column name="userID" />
+			</id>
+			<basic name="name">
+				<column name="name" />
+			</basic>
+			<basic name="screenName">
+				<column name="screenName" />
+			</basic>
+			<basic name="description">
+				<column name="description" />
+			</basic>
+			<basic name="createdAt">
+				<column name="createdAt" />
+			</basic>
+			<basic name="statusesCount">
+				<column name="statusesCount" />
+			</basic>
+			<basic name="geoEnabled">
+				<column name="geoEnabled" />
+			</basic>
+			<basic name="followersCount">
+				<column name="followersCount" />
+			</basic>
+			<basic name="friendsCount">
+				<column name="friendsCount" />
+			</basic>
+			<basic name="url">
+				<column name="url" />
+			</basic>
+			<basic name="listedCount">
+				<column name="listedCount" />
+			</basic>
+			<basic name="utcOffset">
+				<column name="utcOffset" />
+			</basic>
+			<basic name="userFollowers">
+				<column name="userFollowers" />
+			</basic>
+			<basic name="userFriends">
+				<column name="userFriends" />
+			</basic>
+		</attributes>
+	</entity>
+
+	<entity class="atos.knowledgelab.capture.bean.PeriodicAnalysisResult" name="PeriodicAnalysisResult">
+		<table name="analysis_result" />
+		<inheritance strategy="SINGLE_TABLE" />
+		<discriminator-column name="type"
+			discriminator-type="STRING" />
+		<attributes>
+			<id name="analysisId">
+				<column name="analysisId" />
+			</id>
+			<basic name="aDate">
+				<column name="aDate" />
+			</basic>
+			<basic name="periodicity">
+				<column name="periodicity" />
+			</basic>	
+			<basic name="analysisType">
+				<column name="analysisType" />
+			</basic>
+			<many-to-one name="dataChannel"/>
+			<many-to-one name="dataPool"/>			
+		</attributes>
+	</entity>
+	
+	<entity class="atos.knowledgelab.capture.bean.VolumeOcurrenceAnalysis"
+		name="VolumeOcurrenceAnalysis">
+		<table name="analysis_result" />
+		<discriminator-value>VolumeOcurrenceAnalysis</discriminator-value>
+		<attributes>
+			<basic name="measurement">
+				<column name="measurement" />
+			</basic>							
+		</attributes>
+	</entity>
+	
+	<entity class="atos.knowledgelab.capture.bean.TermOccurrenceAnalysis"
+		name="TermOccurrenceAnalysis">
+		<table name="analysis_result" />
+		<discriminator-value>VolumeOcurrenceAnalysis</discriminator-value>
+		<attributes>
+			<element-collection name="termOcc">
+				<map-key-column name="term"/>
+				<column name="occurences"/>
+				<collection-table name="term_occurences">
+					<join-column name="analysisId"/>
+				</collection-table>				
+			</element-collection>						
+		</attributes>
+	</entity>
+
+	<embeddable class="atos.knowledgelab.capture.bean.Geolocalization">
+		<attributes>
+			<basic name="latitude" />
+			<basic name="longitude" />
+		</attributes>
+	</embeddable>
+	
+</entity-mappings>

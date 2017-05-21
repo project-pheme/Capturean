@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5" 
+	metadata-complete="true"> -->
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	metadata-complete="true" version="3.1">
+
+	<display-name>Archetype Created Web Application</display-name>
+
+
+  	<listener>
+		<listener-class>atos.knowledgelab.capture.stream.monitor.MonitorContextServlet</listener-class>
+	</listener>
+
+	<servlet>
+		<servlet-name>Stats</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.servlets.StatServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Stats</servlet-name>
+		<url-pattern>/stats</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Overview</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.servlets.OverviewServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Overview</servlet-name>
+		<url-pattern>/overview</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Pipeline config</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.servlets.PipelineConfigServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Pipeline config</servlet-name>
+		<url-pattern>/pipeline</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Overview Details</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.servlets.OverviewDetailsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Overview Details</servlet-name>
+		<url-pattern>/details</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Hours</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.servlets.TimelineHoursServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Hours</servlet-name>
+		<url-pattern>/hours/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Minutes</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.servlets.TimelineMinutesServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Minutes</servlet-name>
+		<url-pattern>/minutes/*</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>Seconds</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.servlets.TimelineSecondsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Seconds</servlet-name>
+		<url-pattern>/seconds/*</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Live vis -->
+	<servlet>
+		<servlet-name>Websocket</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.monitor.live.StreamSocket</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Websocket</servlet-name>
+		<url-pattern>/socket.io/</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Topic</servlet-name>
+		<servlet-class>atos.knowledgelab.capture.monitor.live.LiveTopic</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Topic</servlet-name>
+		<url-pattern>/live</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<absolute-ordering />
+	
+	<!-- necessary extension handlers for webfonts & vector maps -->
+	<mime-mapping>
+		<extension>woff</extension>
+		<mime-type>application/font-woff</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>woff2</extension>
+		<mime-type>application/font-woff</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>ttf</extension>
+		<mime-type>application/octet-stream</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>map</extension>
+		<mime-type>application/json</mime-type>
+	</mime-mapping>
+	
+</web-app>

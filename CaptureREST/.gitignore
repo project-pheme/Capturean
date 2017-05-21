@@ -1,0 +1,9 @@
+/target/
+/.settings/
+/.classpath
+/.project
+/webapp/
+/src/main/webapp/application.wadl
+/src/main/webapp/application.html
+/src/main/wadl/application.wadl
+/datanucleus.log

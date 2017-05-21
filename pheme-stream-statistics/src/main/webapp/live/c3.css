@@ -1,0 +1,43 @@
+
+/*-- Tooltip --*/
+
+.c3-tooltip-container {
+  z-index: 10;
+  margin-top: -100px;
+}
+.c3-tooltip {
+  border-collapse:collapse;
+  border-spacing:0;
+  background-color:#fff;
+  empty-cells:show;
+  -webkit-box-shadow: 7px 7px 12px -9px rgb(119,119,119);
+     -moz-box-shadow: 7px 7px 12px -9px rgb(119,119,119);
+          box-shadow: 7px 7px 12px -9px rgb(119,119,119);
+  opacity: 0.9;
+}
+.c3-tooltip tr {
+  border:0px solid #CCC;
+}
+.c3-tooltip th {
+  background-color: #ececec;
+  font-size:11px;
+  padding:2px 5px;
+  text-align:left;
+  color:#000;
+}
+.c3-tooltip td {
+  font-size:11px;
+  padding: 3px 6px;
+  background-color:#fff;
+  border-left:0px dotted #999;
+}
+.c3-tooltip td > span {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 6px;
+}
+.c3-tooltip td.value{
+  text-align: right;
+}
+

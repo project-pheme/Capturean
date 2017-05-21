@@ -1,0 +1,1017 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor 
+	license agreements. See the NOTICE file distributed with this work for additional 
+	information regarding copyright ownership. The ASF licenses this file to 
+	you under the Apache License, Version 2.0 (the "License"); you may not use 
+	this file except in compliance with the License. You may obtain a copy of 
+	the License at http://www.apache.org/licenses/LICENSE-2.0 Unless required 
+	by applicable law or agreed to in writing, software distributed under the 
+	License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS 
+	OF ANY KIND, either express or implied. See the License for the specific 
+	language governing permissions and limitations under the License. -->
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!-- Project detailes -->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>vphshare.metadatamanagement</groupId>
+	<artifactId>CaptureREST</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	<name>CaptureRest (service)</name>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jdk.version>1.7</jdk.version>		
+	</properties>
+	
+	<repositories>
+		<repository>
+			<id>Maven Central</id>
+			<url>http://central.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>clojars</id>
+			<url>http://clojars.org/repo/</url>
+		</repository>
+	</repositories>
+
+	<dependencies>
+
+		<!-- Capture internal dependecies -->
+		<dependency>
+			<groupId>atos.knowledgelab.capture</groupId>
+			<artifactId>capture-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>stax-api</artifactId>
+					<groupId>javax.xml.stream</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>javax.persistence</artifactId>
+					<groupId>org.eclipse.persistence</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- HBASE Client -->
+		<dependency>
+			<groupId>org.apache.hbase</groupId>
+			<artifactId>hbase-client</artifactId>
+			<version>1.1.0.1</version>
+			<!-- <version>0.98.9-hadoop2</version> -->
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-log4j12</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jetty</artifactId>
+					<groupId>org.mortbay.jetty</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>jetty-util</artifactId>
+					<groupId>org.mortbay.jetty</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Hadoop - -->
+		<!--
+		<dependency>
+			<groupId>org.apache.hadoop</groupId>
+			<artifactId>hadoop-hdfs</artifactId>
+			<version>2.2.0</version>
+			
+			<exclusions>
+				<exclusion>
+					<groupId>org.mortbay.jetty</groupId>
+					<artifactId>jetty</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>org.mortbay.jetty</groupId>
+					<artifactId>jetty-util</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.servlet.jsp</groupId>
+					<artifactId>jsp-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>javax.servlet</groupId>
+					<artifactId>servlet-api</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>tomcat</groupId>
+					<artifactId>jasper-runtime</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		-->
+		
+
+		<!-- Jersey Web Client -->
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-core</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-server</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>1.8</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
+			<version>1.8</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>jaxb-impl</artifactId>
+					<groupId>com.sun.xml.bind</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>stax-api</artifactId>
+					<groupId>stax</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency> -->
+
+		<!-- Java XML API -->
+		<!-- <dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+			<version>2.1</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>stax-api</artifactId>
+					<groupId>javax.xml.stream</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+ -->
+		<dependency>
+			<groupId>javax.xml</groupId>
+			<artifactId>jaxb-impl</artifactId>
+			<version>2.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Logging -->
+
+		<!-- Apache Solr -->
+		<dependency>
+			<groupId>org.apache.solr</groupId>
+			<artifactId>solr-solrj</artifactId>
+			<version>5.2.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- <dependency> <groupId>org.apache.solr</groupId> <artifactId>solr-core</artifactId> 
+			<version>5.2.0</version> </dependency> -->
+
+		<!-- Jackson -->
+		<!-- <dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-core-asl</artifactId>
+			<version>1.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.8.0</version>
+		</dependency> -->
+		<dependency>
+		    <groupId>com.fasterxml.jackson.core</groupId>
+		    <artifactId>jackson-core</artifactId>
+		    <version>2.6.3</version> 
+		</dependency>
+		<dependency>
+		    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+		    <artifactId>jackson-jaxrs-json-provider</artifactId>
+		    <version>2.6.3</version>
+		</dependency>
+		<!-- 
+		<dependency>
+		    <groupId>com.fasterxml.jackson.jaxrs</groupId>
+		    <artifactId>jackson-jaxrs-xml-provider</artifactId>
+		    <version>2.6.3</version>
+		</dependency>
+		 -->
+
+		<!-- Twitter API -->
+		<dependency>
+			<groupId>org.twitter4j</groupId>
+			<artifactId>twitter4j-core</artifactId>
+			<version>4.0.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.twitter4j</groupId>
+			<artifactId>twitter4j-stream</artifactId>
+			<version>4.0.4</version>
+		</dependency>
+
+		<!-- DataNucleus -->
+
+		<dependency>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>datanucleus-core</artifactId>
+			<version>4.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>datanucleus-api-jpa</artifactId>
+			<version>4.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>datanucleus-hbase</artifactId>
+			<version>4.1.0-release</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>hbase</artifactId>
+					<groupId>org.apache.hbase</groupId>
+				</exclusion>
+				<exclusion>
+					<artifactId>hadoop-core</artifactId>
+					<groupId>org.apache.hadoop</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+
+		<!-- some dependencies for the reddit thingy -->
+		<dependency>
+			<groupId>com.pusher</groupId>
+			<artifactId>pusher-java-client</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jsoup</groupId>
+			<artifactId>jsoup</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+		<dependency>
+			<groupId>com.mashape.unirest</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+	<!-- 	<dependency>
+			<groupId>org.datanucleus</groupId>
+			<artifactId>datanucleus-rdbms</artifactId>
+			<version>4.0.7</version>
+		</dependency>
+ -->
+
+		<!-- Storm -->
+		<!-- <dependency> <groupId>storm</groupId> <artifactId>storm</artifactId> 
+			<version>0.9.0.1</version> <exclusions> <exclusion> <artifactId>jetty</artifactId> 
+			<groupId>org.mortbay.jetty</groupId> </exclusion> <exclusion> <artifactId>jetty-util</artifactId> 
+			<groupId>org.mortbay.jetty</groupId> </exclusion> <exclusion> <artifactId>servlet-api</artifactId> 
+			<groupId>javax.servlet</groupId> </exclusion> <exclusion> <artifactId>asm</artifactId> 
+			<groupId>org.ow2.asm</groupId> </exclusion> </exclusions> </dependency> <dependency> 
+			<groupId>com.github.ptgoetz</groupId> <artifactId>storm-hbase</artifactId> 
+			<version>0.1.2</version> <exclusions> <exclusion> <artifactId>hadoop-common</artifactId> 
+			<groupId>org.apache.hadoop</groupId> </exclusion> <exclusion> <artifactId>org.apache.hadoop</artifactId> 
+			<groupId>hadoop-annotations</groupId> </exclusion> <exclusion> <artifactId>jdk.tools</artifactId> 
+			<groupId>jdk.tools</groupId> </exclusion> <exclusion> <artifactId>jetty</artifactId> 
+			<groupId>org.mortbay.jetty</groupId> </exclusion> <exclusion> <artifactId>jetty-util</artifactId> 
+			<groupId>org.mortbay.jetty</groupId> </exclusion> <exclusion> <artifactId>jsp-api</artifactId> 
+			<groupId>javax.servlet.jsp</groupId> </exclusion> <exclusion> <artifactId>servlet-api</artifactId> 
+			<groupId>javax.servlet</groupId> </exclusion> <exclusion> <artifactId>jasper-runtime</artifactId> 
+			<groupId>tomcat</groupId> </exclusion> <exclusion> <artifactId>hbase-client</artifactId> 
+			<groupId>org.apache.hbase</groupId> </exclusion> </exclusions> </dependency> -->
+		<!-- Apache commons -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+
+		<!-- Kafka -->
+		<dependency>
+			<groupId>org.apache.kafka</groupId>
+			<artifactId>kafka_2.11</artifactId>
+			<version>0.10.0.0</version>
+		</dependency>
+
+		<!-- XStream -->
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<!-- HSQL Driver -->
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>2.3.2</version>
+		</dependency>
+
+		<!-- Servlet -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Security (Apache Shiro) -->
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-core</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.shiro</groupId>
+			<artifactId>shiro-web</artifactId>
+			<version>1.2.3</version>
+		</dependency>
+
+		<!-- JSTL - only for eclipse GUI development -->
+		<!-- TODO to be removed after separation of the GUI -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+			<version>1.1.2</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+	        <groupId>org.eclipse.jetty</groupId>
+	        <artifactId>jetty-jsp</artifactId>
+	        <version>9.2.7.v20150116</version>
+	        <scope>provided</scope>
+	    </dependency>
+
+		<dependency>
+			<groupId>atos.knowledgelab.capture</groupId>
+			<artifactId>capture-stream</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>flink-streaming-core</artifactId>
+					<groupId>org.apache.flink</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>	
+		<dependency>
+			<groupId>atos.knowledgelab.capture</groupId>
+			<artifactId>capture-persistence</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>javax.persistence</artifactId>
+					<groupId>org.eclipse.persistence</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+	</dependencies>
+	
+	
+	<!-- Profile configuration -->
+	<profiles>
+	    <!-- The configuration of the development profile -->
+	    <profile>
+	        <id>devel-localhost</id>
+	        <!-- The development profile is active by default -->
+	        <activation>
+	            <activeByDefault>true</activeByDefault>
+	        </activation>
+	        <properties>
+	            <!--
+	                Specifies the build.profile.id property that must be equal than the name of
+	                the directory that contains the profile specific configuration file.
+	                Because the name of the directory that contains the configuration file of the
+	                development profile is dev, we must set the value of the build.profile.id 
+	                property to dev.
+	            -->
+	            <build.profile.id>devel-localhost</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/devel-localhost</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	    <!-- The configuration of the production profile -->
+	    <profile>
+	        <id>production-sheffield-gatezkt1</id>
+	        <properties>
+	            <!--
+	                Specifies the build.profile.id property that must be equal than the name of
+	                the directory that contains the profile specific configuration file.
+	                Because the name of the directory that contains the configuration file of the
+	                production profile is prod, we must set the value of the build.profile.id 
+	                property to prod.
+	            -->
+	            <build.profile.id>production-sheffield-gatezkt1</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/production-sheffield-gatezkt1</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	    <profile>
+	        <id>production-sheffield-gatezkt1-2</id>
+	        <properties>
+	            <!--
+	                Specifies the build.profile.id property that must be equal than the name of
+	                the directory that contains the profile specific configuration file.
+	                Because the name of the directory that contains the configuration file of the
+	                production profile is prod, we must set the value of the build.profile.id 
+	                property to prod.
+	            -->
+	            <build.profile.id>production-sheffield-gatezkt1-2</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/production-sheffield-gatezkt1-2</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	    <!-- The configuration of the testing profile -->
+	    <profile>
+	        <id>production-sheffield-med</id>
+	        <properties>
+	            <!--
+	                Specifies the build.profile.id property that must be equal than the name of
+	                the directory that contains the profile specific configuration file.
+	                Because the name of the directory that contains the configuration file of the
+	                testing profile is test, we must set the value of the build.profile.id 
+	                property to test.
+	            -->
+	            <build.profile.id>production-sheffield-med</build.profile.id>
+	        </properties>
+	        <build>
+	            <resources>
+	                <resource>
+	                    <directory>profiles/production-sheffield-med</directory>
+	                </resource>
+	            </resources>
+        	</build>
+	    </profile>
+	      <profile>
+                <id>production-iter</id>
+                <properties>
+                    <!--
+                        Specifies the build.profile.id property that must be equal than the name of
+                        the directory that contains the profile specific configuration file.
+                        Because the name of the directory that contains the configuration file of the
+                        testing profile is test, we must set the value of the build.profile.id
+                        property to test.
+                    -->
+                    <build.profile.id>production-iter</build.profile.id>
+                </properties>
+                <build>
+                    <resources>
+                        <resource>
+                            <directory>profiles/production-iter</directory>
+                        </resource>
+                    </resources>
+                </build>
+            </profile>
+            <profile>
+                <id>production-kcl-vm</id>
+                <properties>
+                    <!--
+                        Specifies the build.profile.id property that must be equal than the name of
+                        the directory that contains the profile specific configuration file.
+                        Because the name of the directory that contains the configuration file of the
+                        testing profile is test, we must set the value of the build.profile.id
+                        property to test.
+                    -->
+                    <build.profile.id>production-kcl-vm</build.profile.id>
+                </properties>
+                <build>
+                    <resources>
+                        <resource>
+                            <directory>profiles/production-kcl-vm</directory>
+                        </resource>
+                    </resources>
+                </build>
+            </profile>
+            <profile>
+                <id>production-ontotext</id>
+                <properties>
+                    <!--
+                        Specifies the build.profile.id property that must be equal than the name of
+                        the directory that contains the profile specific configuration file.
+                        Because the name of the directory that contains the configuration file of the
+                        testing profile is test, we must set the value of the build.profile.id
+                        property to test.
+                    -->
+                    <build.profile.id>production-ontotext</build.profile.id>
+                </properties>
+                <build>
+                    <resources>
+                        <resource>
+                            <directory>profiles/production-ontotext</directory>
+                        </resource>
+                    </resources>
+                </build>
+            </profile>
+	</profiles>
+
+		
+	<build>
+		<finalName>CaptureREST</finalName>
+		
+		
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.datanucleus</groupId>
+				<artifactId>datanucleus-maven-plugin</artifactId>
+				<version>4.0.0-release</version>
+				<configuration>
+					<fork>false</fork>
+					<api>JPA</api>
+					<verbose>true</verbose>
+					<persistenceUnitName>Capture</persistenceUnitName>
+					<jdkLogConfiguration></jdkLogConfiguration>			
+					<targetDirectory>target/classes</targetDirectory>						
+				</configuration>				
+				<executions>
+					<execution>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>enhance</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<webXml>${basedir}/src/main/webapp/WEB-INF/web.xml</webXml>
+					<webResource>
+                        <directory>profiles/${build.profile.id}/</directory>
+                    </webResource>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.12.3</version>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<generatePackage>com.sun.jersey.samples.generatewadl.model</generatePackage>
+					<schemaDirectory>src/main/xsd</schemaDirectory>
+					<includeSchemas>
+						<includeSchema>**/*.xsd</includeSchema>
+					</includeSchemas>
+					<extension>true</extension>
+					<strict>false</strict>
+					<verbose>true</verbose>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.8</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>javadoc</goal>
+						</goals>
+						<phase>compile</phase>
+					</execution>
+				</executions>
+
+				<configuration>
+					<useStandardDocletOptions>false</useStandardDocletOptions>
+					<encoding>UTF-8</encoding>
+					<verbose>false</verbose>
+					<show>public</show>
+					<subpackages>pheme.gathering</subpackages>
+					<show>private</show>
+					<doclet>com.sun.jersey.wadl.resourcedoc.ResourceDoclet</doclet>
+					<docletArtifacts>
+						<docletArtifact>
+							<groupId>com.sun.jersey.contribs</groupId>
+							<artifactId>wadl-resourcedoc-doclet</artifactId>
+							<version>1.12</version>
+						</docletArtifact>
+						<docletArtifact>
+							<groupId>com.sun.jersey</groupId>
+							<artifactId>jersey-server</artifactId>
+							<version>1.13-b01</version>
+						</docletArtifact>
+						<docletArtifact>
+							<groupId>xerces</groupId>
+							<artifactId>xercesImpl</artifactId>
+							<version>2.9.1</version>
+						</docletArtifact>
+					</docletArtifacts>
+					<additionalparam>-output
+						${project.build.outputDirectory}/resourcedoc.xml</additionalparam>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>com.sun.jersey.contribs</groupId>
+				<artifactId>maven-wadl-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>generate</id>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<phase>compile</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<wadlFile>${basedir}/src/main/wadl/application.wadl</wadlFile>
+					<formatWadlFile>true</formatWadlFile>
+					<baseUri>http://vphshare.atosresearch.eu</baseUri>
+					<packagesResourceConfig>
+						<param>pheme.gathering.resources</param>
+						<param>atos.knowledgelab.capture.bean</param>
+					</packagesResourceConfig>
+					<wadlGenerators>
+						<wadlGeneratorDescription>
+							<className>com.sun.jersey.server.wadl.generators.WadlGeneratorApplicationDoc</className>
+							<properties>
+								<property>
+									<name>applicationDocsFile</name>
+									<value>${basedir}/src/main/doc/application-doc.xml</value>
+								</property>
+							</properties>
+						</wadlGeneratorDescription>
+						<wadlGeneratorDescription>
+							<className>com.sun.jersey.server.wadl.generators.WadlGeneratorGrammarsSupport</className>
+							<properties>
+								<property>
+									<name>grammarsFile</name>
+									<value>${basedir}/src/main/doc/application-grammars.xml</value>
+								</property>
+							</properties>
+						</wadlGeneratorDescription>
+						<wadlGeneratorDescription>
+							<className>com.sun.jersey.server.wadl.generators.resourcedoc.WadlGeneratorResourceDocSupport</className>
+							<properties>
+								<property>
+									<name>resourceDocFile</name>
+									<value>${project.build.outputDirectory}/resourcedoc.xml</value>
+								</property>
+							</properties>
+						</wadlGeneratorDescription>
+					</wadlGenerators>
+				</configuration>
+
+			</plugin>
+
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jaxb2-maven-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>schemagen</id>
+						<goals>
+							<goal>schemagen</goal>
+						</goals>
+					</execution>
+				</executions>
+
+				<configuration>
+					<!-- Compatibility with maven 2 -->
+					<!-- <project> ${project} </project> -->
+					<outputDirectory>target</outputDirectory>
+					<includes>
+						<include>pheme/gathering/resources/*.java</include>
+					</includes>
+					<verbose>true</verbose>
+				</configuration>
+
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>xml-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<goals>
+							<goal>transform</goal>
+						</goals>
+						<phase>compile</phase>
+					</execution>
+				</executions>
+				<configuration>
+					<transformationSets>
+						<transformationSet>
+
+							<dir>src/main/wadl</dir>
+
+							<stylesheet>src/main/doc/wadl_documentation.xsl</stylesheet>
+							<fileMappers>
+								<fileMapper
+									implementation="org.codehaus.plexus.components.io.filemappers.FileExtensionMapper">
+									<targetExtension>.html</targetExtension>
+								</fileMapper>
+							</fileMappers>
+						</transformationSet>
+					</transformationSets>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4.3</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+
+						<phase>package</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/</outputDirectory>
+							<resources>
+								<resource>
+
+									<directory>src/main/doc</directory>
+									<filtering>true</filtering>
+
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4.3</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+
+						<phase>compile</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>src/main/webapp</outputDirectory>
+							<resources>
+								<resource>
+
+									<directory>${basedir}/target/generated-resources/xml/xslt/</directory>
+									<filtering>true</filtering>
+
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- <plugin> <artifactId>maven-antrun-plugin</artifactId> <version>1.4</version> 
+				<executions> <execution> <id>copy</id> <phase>compile</phase> <configuration> 
+				<tasks> <copy file="target/generated-resources/xml/xslt/application.html" 
+				tofile="webapp/application.html" /> </tasks> </configuration> <goals> <goal>run</goal> 
+				</goals> </execution> </executions> </plugin> -->
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.4</version>
+				<executions>
+					<execution>
+						<id>copy</id>
+						<phase>compile</phase>
+						<configuration>
+							<tasks>
+								<copy file="src/main/wadl/schema.xsd" tofile="target/schema1.xsd" />
+							</tasks>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>tomcat-maven-plugin</artifactId>
+				<version>1.1</version>
+
+
+				<!-- <configuration> <url>http://localhost:8080/manager/html</url> <server>tomcat_vph</server> 
+					<username>admin</username> <password>admin</password> <path>/metadata-retrieval</path> 
+					<warDirectory>target</warDirectory> </configuration> -->
+
+
+				<!-- Production Configuration -->
+				<configuration>
+					<url>http://localhost:8080/manager/text</url>
+					<server>tomcat</server>
+					<username>mvn-tomcat</username>
+					<password>0n45E44533T7Q5k</password>
+					<path>/pheme-capture</path>
+					<warDirectory>target</warDirectory>
+				</configuration>
+
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>9.2.7.v20150116</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.jetty</groupId>
+						<artifactId>jetty-jsp</artifactId>
+						<version>9.2.7.v20150116</version>
+					</dependency>
+
+					<dependency>
+						<groupId>org.eclipse.jetty</groupId>
+						<artifactId>apache-jstl</artifactId>
+						<version>9.2.7.v20150116</version>
+					</dependency>
+
+				</dependencies>
+				<configuration>
+					<webApp>
+						<contextPath>/CaptureREST</contextPath>
+					</webApp>
+				</configuration>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.jvnet.jaxb2.maven2
+										</groupId>
+										<artifactId>
+											maven-jaxb2-plugin
+										</artifactId>
+										<versionRange>
+											[0.8.0,)
+										</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-javadoc-plugin
+										</artifactId>
+										<versionRange>
+											[2.8,)
+										</versionRange>
+										<goals>
+											<goal>javadoc</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											com.sun.jersey.contribs
+										</groupId>
+										<artifactId>
+											maven-wadl-plugin
+										</artifactId>
+										<versionRange>
+											[1.8,)
+										</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.apache.maven.plugins
+										</groupId>
+										<artifactId>
+											maven-antrun-plugin
+										</artifactId>
+										<versionRange>
+											[1.4,)
+										</versionRange>
+										<goals>
+											<goal>run</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.codehaus.mojo
+										</groupId>
+										<artifactId>
+											xml-maven-plugin
+										</artifactId>
+										<versionRange>
+											[1.0,)
+										</versionRange>
+										<goals>
+											<goal>transform</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+
+</project>

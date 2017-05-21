@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5" 
+	metadata-complete="true"> -->
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	metadata-complete="true" version="3.0">
+	<display-name>Jersey</display-name>
+
+
+	<listener>
+    	<listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+	</listener>
+
+	<listener>
+		<listener-class>pheme.gathering.util.TwitterListener</listener-class>
+	</listener>
+
+
+	<listener>
+		<listener-class>pheme.gathering.gui.config.ConfigurationReader</listener-class>
+	</listener>
+	
+	
+	
+	<filter>
+	    <filter-name>ShiroFilter</filter-name>
+	    <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+	    <filter-name>ShiroFilter</filter-name>
+	    <url-pattern>/*</url-pattern>
+	    <dispatcher>REQUEST</dispatcher>
+	    <dispatcher>FORWARD</dispatcher>
+	    <dispatcher>INCLUDE</dispatcher>
+	    <dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+
+
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	
+	<servlet>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<!-- <param-name>com.sun.jersey.config.property.packages</param-name>
+			<param-value>pheme.gathering.resources</param-value> -->
+			<param-name>com.sun.jersey.config.property.packages</param-name>
+	        <param-value>
+	            <!--
+	              Your application packages go here
+	            -->
+	
+	            <!--
+	              Jackson 2.x JAX-RS @Providers
+	            -->
+	            pheme.gathering.resources
+	            atos.knowledgelab.capture.reddit
+	            
+	            com.fasterxml.jackson.jaxrs.json  <!-- JSON -->
+	            <!-- com.fasterxml.jackson.jaxrs.xml  -->  <!-- XML -->
+	        </param-value>
+			
+		</init-param>
+		<init-param>
+		  <param-name>com.sun.jersey.api.json.POJOMappingFeature</param-name>
+		  <param-value>true</param-value>
+		 </init-param>
+		
+		<!-- <init-param> <param-name>com.sun.jersey.config.property.WadlGeneratorConfig</param-name> 
+			<param-value>glocal.middlelayer.wadl.util.ExampleWadlGenerator</param-value> 
+			</init-param> -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<url-pattern>/rest/*</url-pattern>
+	</servlet-mapping>
+
+
+
+
+
+	<servlet>
+		<servlet-name>Details</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataChannelDetailServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Details</servlet-name>
+		<url-pattern>/details</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Data Pool Details</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataPoolDetailServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Data Pool Details</servlet-name>
+		<url-pattern>/detailsDataPool</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>New</servlet-name>
+		<jsp-file>/addnew.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>New</servlet-name>
+		<url-pattern>/new</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>New Data Pool</servlet-name>
+		<jsp-file>/addnewDataPool.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>New Data Pool</servlet-name>
+		<url-pattern>/newDataPool</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Add</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataChannelAddServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Add</servlet-name>
+		<url-pattern>/add</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>Add Data Pool</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataPoolAddServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Add Data Pool</servlet-name>
+		<url-pattern>/dataPoolAdd</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Modify</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataChannelModifyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Modify</servlet-name>
+		<url-pattern>/modify</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Modify Data Pool</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataPoolModifyServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Modify Data Pool</servlet-name>
+		<url-pattern>/modifyDataPool</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataChannelDeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/delete</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>Delete Data Pool</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataPoolDeleteServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Delete Data Pool</servlet-name>
+		<url-pattern>/deleteDataPool</url-pattern>
+	</servlet-mapping>
+	
+ 	<servlet>
+		<servlet-name>Status</servlet-name>
+		<jsp-file>/status.jsp</jsp-file>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Status</servlet-name>
+		<url-pattern>/status</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>View Tweets</servlet-name>
+		<servlet-class>pheme.gathering.gui.ViewTweetsServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>View Tweets</servlet-name>
+		<url-pattern>/view</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>GUI</servlet-name>
+		<servlet-class>pheme.gathering.gui.DataChannelListServlet</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>GUI</servlet-name>
+		<url-pattern>/list</url-pattern>
+	</servlet-mapping>
+
+	<absolute-ordering />
+	
+	<!-- necessary extension handlers for webfonts & vector maps -->
+	<mime-mapping>
+		<extension>woff</extension>
+		<mime-type>application/font-woff</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>ttf</extension>
+		<mime-type>application/octet-stream</mime-type>
+	</mime-mapping>
+	<mime-mapping>
+		<extension>map</extension>
+		<mime-type>application/json</mime-type>
+	</mime-mapping>
+
+</web-app>

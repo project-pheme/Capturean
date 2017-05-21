@@ -1,0 +1,18 @@
+{
+  "name" : "Reddit datachannel",
+  "type" : "search",
+  "description" : "",
+  "startCaptureDate" : "2017-02-12 12:48:09.000",
+  "endCaptureDate" : "2017-02-20 17:50:09.000",
+  "status" : "active",
+  "dataSources" : [ 
+    { "reddit": 
+      {
+        "type" : "reddit",
+        "redditType" : "subreddit",
+        "subreddits" : [ "worldnews" ],
+        "keywords" : "burger"
+        } 
+      }
+    ]
+}

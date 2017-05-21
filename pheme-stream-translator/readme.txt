@@ -1,0 +1,14 @@
+Text
+CreatedAt
+RawJson
+UserScreenName
+FavouriteCount
+HashTags
+InReplyToId
+Latitude
+LatLong
+Longitude
+OriginalTweetId
+Place
+RetweetCount
+Source
